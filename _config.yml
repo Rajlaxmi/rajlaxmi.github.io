@@ -29,6 +29,8 @@ github_username: Rajlaxmi
 theme: minima
 show_excerpts: true
 
+google_analytics: UA-233423411-1
+
 # plugins:
 #   - jekyll-feed
 #   - jekyll-remote-theme
