@@ -1,4 +1,3 @@
-# 2023-11-07 The Four Types of Officers
 
 German General Kurt Von Hammerstein-Equord’s four officer categories:
 - Clever
