@@ -20,5 +20,5 @@ Hardworking and intelligent: Tackles problems, relentless, does not accept defea
 The man who is clever and lazy qualifies for the highest leadership posts. He has the requisite nerves and the mental clarity for difficult decisions. The clever and lazy you make Chief of Staff, because he will not try to do everybody else’s work, and will always have time to think. 
 
 References:
-1. https://quoteinvestigator.com/2014/02/28/clever-lazy/
-2. https://www.oxfordreference.com/display/10.1093/acref/9780191826719.001.0001/q-oro-ed4-00012327
+1. [Quoteinvestigator - Clever Lazy](https://quoteinvestigator.com/2014/02/28/clever-lazy/)
+2. [Oxford Reference](https://www.oxfordreference.com/display/10.1093/acref/9780191826719.001.0001/q-oro-ed4-00012327)
