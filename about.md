@@ -8,4 +8,6 @@ permalink: /about/
 
 [rajlaxmisah@gmail.com](mailto:rajlaxmisah@gmail.com?subject=Resume%20Inquiry)
 
-## Companies
+## LinkedIn
+
+https://www.linkedin.com/in/rajlaxmi-a6b28942/
