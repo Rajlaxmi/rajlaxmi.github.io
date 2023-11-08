@@ -10,4 +10,4 @@ permalink: /about/
 
 ## LinkedIn
 
-https://www.linkedin.com/in/rajlaxmi-a6b28942/
+[Linkedin-rajlaxmi](https://www.linkedin.com/in/rajlaxmi-a6b28942/)
