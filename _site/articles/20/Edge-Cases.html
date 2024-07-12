@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Edge Cases</title>
+  <meta name="description" content="Some edge cases and cautionary examples on using Markdown for writing content using this theme. In particular, list syntax can really knot things up.">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  
+    <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+  
+<!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: [
+      "MathMenu.js",
+      "MathZoom.js",
+      "AssistiveMML.js",
+      "a11y/accessibility-menu.js"
+    ],
+    jax: ["input/TeX", "output/CommonHTML"],
+    TeX: {
+      extensions: [
+        "AMSmath.js",
+        "AMSsymbols.js",
+        "noErrors.js",
+        "noUndefined.js",
+      ]
+    }
+  });
+</script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>  
+
+
+  <link rel="stylesheet" type="text/css" href="/css/tufte.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"> -->
+
+  <link rel="canonical" href="/articles/20/Edge-Cases">
+
+  <link rel="alternate" type="application/rss+xml" title="Tufte-Jekyll" href="/feed.xml" />
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+<header>
+    <nav class="group">
+	<a href="/"><img class="badge" src="/assets/img/badge_1.png" alt="CH"></a>
+	
+		
+  	
+		
+		    
+		      <a href="/">blog</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/about/">About</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/css/print.css"></a>
+		    
+	    
+  	
+		
+  	
+	</nav>
+</header>
+    <article class="group">
+      <h1>Edge Cases</h1>
+<p class="subtitle">April 13, 2020</p>
+
+<p>Some edge cases and cautionary examples on using Markdown for writing content using this theme. In particular, list syntax can really knot things up.
+<!--more--></p>
+
+<h3 id="mathjax-improperly-parsing-greater-and-less-than-and-ampersands-inside-blocks">Mathjax improperly parsing greater and less than and ampersands inside blocks</h3>
+
+<p>The mathjax HTML <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code> scripts have been modified to properly render block style mathjax expressions inside a <code class="language-plaintext highlighter-rouge">$$ ... $$</code> set of character pairs,
+using the standard Kramdown parser. Some examples sent to me by Quxiaofeng are now parsing correctly, I believe.</p>
+
+<p>This code:</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">$$</span><span class="nb">
+  D </span><span class="o">=</span><span class="nb"> </span><span class="nv">\left</span><span class="o">(</span><span class="nv">\begin</span><span class="p">{</span><span class="nb">matrix</span><span class="p">}</span><span class="nb">
+  </span><span class="m">1</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> </span><span class="o">-</span><span class="m">1</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> </span><span class="nv">\\</span><span class="nb">
+  </span><span class="p">&amp;</span><span class="nb">    </span><span class="p">&amp;</span><span class="nb"> </span><span class="nv">\cdots</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb">   </span><span class="p">&amp;</span><span class="nb"> </span><span class="nv">\\</span><span class="nb">
+  </span><span class="p">&amp;</span><span class="nb">    </span><span class="p">&amp;</span><span class="nb">        </span><span class="p">&amp;</span><span class="nb"> </span><span class="m">1</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> </span><span class="o">-</span><span class="m">1</span><span class="nb">
+ </span><span class="nv">\end</span><span class="p">{</span><span class="nb">matrix</span><span class="p">}</span><span class="nb">
+ </span><span class="nv">\right</span><span class="o">)</span><span class="nb">
+</span><span class="p">$$</span>
+</code></pre></div></div>
+<p>yields this:</p>
+
+\[D = \left(\begin{matrix}
+  1 &amp; -1 &amp; &amp; &amp; &amp; \\
+  &amp;    &amp; \cdots &amp;   &amp; \\
+  &amp;    &amp;        &amp; 1 &amp; -1
+\end{matrix}
+\right)\]
+
+<p>Other examples from the <a href="http://latex.wikia.com/wiki/Matrix_environments">wikia Tex reference</a>:</p>
+
+\[\begin{matrix}
+\alpha&amp; \beta^{*}\\
+\gamma^{*}&amp; \delta
+\end{matrix}\]
+
+\[\begin{bmatrix}
+\alpha&amp; \beta^{*}\\
+\gamma^{*}&amp; \delta
+\end{bmatrix}\]
+
+\[\begin{Bmatrix}
+\alpha&amp; \beta^{*}\\
+\gamma^{*}&amp; \delta
+\end{Bmatrix}\]
+
+\[\begin{vmatrix}
+\alpha&amp; \beta^{*}\\
+\gamma^{*}&amp; \delta
+\end{vmatrix}\]
+
+\[\begin{Vmatrix}
+\alpha&amp; \beta^{*}\\
+\gamma^{*}&amp; \delta
+\end{Vmatrix}\]
+
+\[\begin{Vmatrix}
+\alpha&amp; \beta^{*}\\
+\gamma^{*}&amp; \delta
+\end{Vmatrix}\]
+
+<p>However, a problem still exists for inline matrix notation, from an example <a href="https://en.wikibooks.org/wiki/LaTeX/Mathematics#Matrices_in_running_text">here</a>:</p>
+
+<p>A matrix in text must be set smaller: \(\bigl(\begin{smallmatrix}a &amp; b \\ c &amp; d\end{smallmatrix} \bigr)\) to not increase leading in a portion of text. The way this inline matrix is written is: <code class="language-plaintext highlighter-rouge">$$ \bigl(\begin{smallmatrix}a &amp; b \\ c &amp; d\end{smallmatrix} \bigr) $$</code></p>
+
+<h2 id="edge-case-1-from-quxiaofeng">Edge Case 1 from Quxiaofeng:</h2>
+
+<h3 id="no-blank-lines-between-markdown-list-items">No blank lines between Markdown list items</h3>
+
+<p>The issue arises when sidenotes and marginnotes are put into list items.  As mentioned in the main documentation page, lists can be problematic not only for semantic clarity, but also because they can creating formatting issues. For example:</p>
+
+
+
+
+    </article>
+    <span class="print-footer">Edge Cases - April 13, 2020 - Rajlaxmi</span>
+    <footer>
+  <hr class="slender">
+  <ul class="footer-links">
+    
+      <li>
+        <a href="rajlaxmisah@gmail.com"><span class="icon-mail3"></span></a>
+      </li>
+    
+      <li>
+        <a href="https://x.com/rajlaxmisah"><span class="icon-twitter"></span></a>
+      </li>
+    
+      <li>
+        <a href="//github.com/Rajlaxmi"><span class="icon-github"></span></a>
+      </li>
+    
+      <li>
+        <a href="//linkedin.com/in/rajlaxmi-a6b28942/"><span class="icon-linkedin"></span></a>
+      </li>
+      
+  </ul>
+<div class="credits">
+<span>&copy; 2024 &nbsp;&nbsp;RAJLAXMI</span></br> <br>
+<span>This site created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme for Content-centric blogging </a> in <a href="//jekyllrb.com">Jekyll</a>.</span> 
+</div>  
+</footer>
+
+  </body>
+</html>
