@@ -13,5 +13,5 @@ I am driven by my curiosity and learning from the collective stream of conscious
 [mindsx0fmachines](https://mindsx0fmachines.substack.com/): Exploring machine conciousness, superintelligence and machine intelligence. \
 [twitter](https://twitter.com/rajlaxmisah): For sharing short interesting tidbits or links. \
 [linkedIn](https://www.linkedin.com/in/rajlaxmi-a6b28942/): My professional space. \
-[photography](https://www.instagram.com/raila.snapshots/): I maintain a novice photography page.
+[photography](https://www.instagram.com/raila.snapshots/): I maintain a novice photography page. \
 [goodreads](https://www.goodreads.com/user/show/28756394-raila): By all means, send me book recommendations.
