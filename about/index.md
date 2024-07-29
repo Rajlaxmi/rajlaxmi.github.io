@@ -14,4 +14,4 @@ I am driven by my curiosity and learning from the collective stream of conscious
 [twitter](https://twitter.com/rajlaxmisah): For sharing short interesting tidbits or links. \
 [linkedIn](https://www.linkedin.com/in/rajlaxmisah): My professional space. \
 [photography](https://www.instagram.com/raila.snapshots/): I maintain a novice photography page. \
-[goodreads](https://www.goodreads.com/user/show/railax): By all means, send me book recommendations.
+[goodreads](https://www.goodreads.com/railax): By all means, send me book recommendations.
