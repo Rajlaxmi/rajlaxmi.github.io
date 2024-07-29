@@ -3,6 +3,13 @@ layout: full-width
 title: About
 ---
 
-I am a software engineer working at applied machine learning teams at Google. I am interested in large language model research, particularly LLM applied to reasoning and maths, alignment and multimodality.
+I am a software engineer on the applied machine learning teams at Google. My research interests include applying LLMs to reasoning and mathematics, alignment, and multimodality.
 
-You can find me on [Linkedin](https://www.linkedin.com/in/rajlaxmi-a6b28942/). I maintain a novice photography page [here](https://www.instagram.com/raila.snapshots/).
+I am driven by my curiosity and learning from the collective stream of consciousness of past and present intellectuals. My other interests include Botany, Medical sciences, Human body, History art and architecture, Political and governance structures around the world.  
+
+- [rajlaxmi.github.io](https://rajlaxmi.github.io/): My stream of thoughts \
+[deep-sci.github.io](https://deep-sci.github.io/): Space for more technical and scientific posts. \
+[mindsx0fmachines](https://mindsx0fmachines.substack.com/): Exploring machine conciousness, superintelligence and machine intelligence. \
+[twitter](https://twitter.com/rajlaxmisah): For sharing short interesting tidbits or links. \
+[linkedIn](https://www.linkedin.com/in/rajlaxmi-a6b28942/): My professional space. \
+[photography](https://www.instagram.com/raila.snapshots/): I maintain a novice photography page.
