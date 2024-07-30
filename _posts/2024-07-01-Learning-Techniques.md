@@ -12,7 +12,7 @@ Summary of different learning techniques to boost capacity for learning.
 
 ### Active Learning
 
-This approach involves engaging actively with the material rather than passively consuming it. It often includes activities such as discussions, problem-solving, and practical application of knowledge.
+Involves engaging actively with the material rather than passively consuming it. It often includes activities such as discussions, problem-solving, and practical application of knowledge.
 
 [Cornell Teaching: Active Learning](https://teaching.cornell.edu/teaching-resources/active-collaborative-learning/active-learning)
 
@@ -33,19 +33,19 @@ Better memory and recall, Better creativity, Better connections between concepts
 
 ### Self-Testing
 
-Involves testing oneself on the material to assess understanding and retention. It reinforces learning by identifying areas of weakness that require further review.
+Reinforces learning by identifying areas of weakness that require further review.
 
 ### Active Recall
 
-Involves retrieving information from memory without the aid of notes or textbooks. It strengthens memory by actively engaging the brain in recalling information.
+Strengthens memory by actively engaging the brain in recalling information.
 
 ### Note-taking
 
-Involves summarizing and recording key points from lectures or readings. Effective note-taking helps organize information, aids in comprehension, and provides a useful resource for review.
+Effective note-taking helps organize information, aids in comprehension, and provides a useful resource for review.
 
 ### Practice and Application
 
-Involves applying learned concepts through practical exercises or real-world scenarios. It enhances understanding and reinforces learning by demonstrating how theoretical knowledge can be put into practice.
+Enhances understanding and reinforces learning by demonstrating how theoretical knowledge can be put into practice.
 
 ### Mnemonics
 
@@ -69,11 +69,11 @@ The belief that abilities and intelligence can be developed through effort, pers
 
 ### No Multitasking
 
-Focusing on one task at a time rather than attempting to juggle multiple tasks simultaneously. It enhances concentration, reduces errors, and improves productivity and learning outcomes.
+Enhances concentration, reduces errors, and improves productivity and learning outcomes.
 
 ### Minimizing Distractions
 
-Removing or reducing distractions in the study environment to maintain focus and concentration. It includes strategies like turning off notifications, finding a quiet space, or using noise-canceling headphones.
+Removing distractions to maintain focus and concentration.
 
 ### Time Management
 
