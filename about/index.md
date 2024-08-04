@@ -11,8 +11,8 @@ I am driven by my curiosity and learning from the collective stream of conscious
 - [rajlaxmi.github.io](https://rajlaxmi.github.io/): My stream of thoughts \
 [linkedIn](https://www.linkedin.com/in/rajlaxmisah): My professional space. \
 [twitter](https://twitter.com/rajlaxmisah): For sharing short interesting tidbits or links. \
-[deep-sci.github.io](https://deep-sci.github.io/): Space for more technical and scientific posts. \
-[mindsx0fmachines](https://mindsx0fmachines.substack.com/): Exploring machine conciousness, superintelligence and machine intelligence. \
+[deep-sci.github.io](https://deep-sci.github.io/): Space for more technical and scientific posts. TBD. \
+[mindsx0fmachines](https://mindsx0fmachines.substack.com/): Exploring machine conciousness, superintelligence and machine intelligence. TBD. \
 [goodreads](https://www.goodreads.com/railax): By all means, send me book recommendations. \
 [photography](https://www.instagram.com/raila.snapshots/): I maintain a novice photography page.
 
