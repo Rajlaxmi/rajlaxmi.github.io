@@ -5,10 +5,9 @@ date: 2024-08-06
 categories: post
 ---
 
-Turning the Inner Eye.
+"Happiness is like a butterfly: the more you chase it, the more it will elude you." - Thoreau
 
 <!--more-->
-"Happiness is like a butterfly: the more you chase it, the more it will elude you." - Thoreau
 
 I have recently been feeling very confident secure and at peace with myself which has been an amazing feeling! My strut is different, my ability to forego the noise and focus on things I find rewarding has led me to be even more productive.
 
