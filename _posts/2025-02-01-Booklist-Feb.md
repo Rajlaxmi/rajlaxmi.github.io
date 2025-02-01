@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "February 2025 Book Review"
-date: 2025-01-01
+date: 2025-02-01
 categories: post
 ---
 
