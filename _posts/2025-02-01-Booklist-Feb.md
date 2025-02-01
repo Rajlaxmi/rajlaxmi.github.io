@@ -7,6 +7,7 @@ categories: post
 
 The Prince by Niccolo Machiavelli
 
+<!--more-->
 
 TBD
 - The Republic – Plato
