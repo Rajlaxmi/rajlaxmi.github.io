@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
+import BackgroundVideo from '../components/BackgroundVideo';
 import About from '../components/About';
 import Skills from '../components/Skills';
 import Projects from '../components/Projects';
@@ -16,6 +17,7 @@ const Portfolio: React.FC = () => {
       <Header activeSection={activeSection} />
       <main>
         <Hero />
+        <BackgroundVideo />
         <About />
         <Skills />
         <Projects />
