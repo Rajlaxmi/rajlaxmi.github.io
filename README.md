@@ -1,5 +1,7 @@
 rajlaxmi.github.io
 
+Read LICENSE.
+
 ## Deployment to GitHub Pages
 
 This project uses Vite and `gh-pages` to deploy to GitHub Pages.
