@@ -1,0 +1,43 @@
+```yaml
+name: Build and Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # or 'master' if your default branch is named 'master'
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Set this to your preferred Node.js version
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site
+        run: npm run build
+
+      - name: Clean root (except .github and dist)
+        run: |
+          shopt -s extglob
+          rm -rf !(.github|dist)
+
+      - name: Copy dist to root
+        run: cp -r dist/* .
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add .
+          git commit -m "Deploy site [skip ci]" || echo "No changes to commit"
+          git push
+```
