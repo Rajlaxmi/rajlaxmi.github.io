@@ -18,7 +18,7 @@ const Skills: React.FC = () => {
     },
     {
       icon: <Code size={24} />,
-      title: 'Software Engineering',
+      title: 'Engineering',
       description: 'Building robust, scalable applications',
       skills: ['Python', 'PyTorch', 'TensorFlow', 'PyTorch CUDA', 'Keras']
     },
@@ -30,7 +30,7 @@ const Skills: React.FC = () => {
     },
     {
       icon: <Server size={24} />,
-      title: 'Large Scale Systems',
+      title: 'Complex Systems',
       description: 'Bringing projects to life online',
       skills: ['Large Scale Systems', 'Distributed Systems', 'Cloud Computing', 'Containerization', 'CI/CD']
     }
