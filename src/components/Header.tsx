@@ -46,7 +46,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
             onClick={() => scrollToSection('hero')}
             className="text-xl font-light tracking-wide text-stone-800 hover:text-stone-600 transition-colors"
           >
-            Rajlaxmi
+            Raila
           </button>
 
           {/* Desktop Navigation */}
