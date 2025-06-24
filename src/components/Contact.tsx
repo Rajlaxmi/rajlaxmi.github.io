@@ -1,12 +1,11 @@
 import React from 'react';
-import { Mail, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Linkedin, Twitter } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const socialLinks = [
-    { icon: <Mail size={20} />, label: 'Email', href: 'mailto:hello@example.com' },
-    { icon: <Github size={20} />, label: 'GitHub', href: 'https://github.com' },
-    { icon: <Linkedin size={20} />, label: 'LinkedIn', href: 'https://linkedin.com' },
-    { icon: <Twitter size={20} />, label: 'Twitter', href: 'https://twitter.com' }
+    { icon: <Mail size={20} />, label: 'Email', href: 'mailto:rajlaxmisah@example.com' },
+    { icon: <Linkedin size={20} />, label: 'LinkedIn', href: 'https://www.linkedin.com/in/rajlaxmisah' },
+    { icon: <Twitter size={20} />, label: 'Twitter', href: 'https://x.com/raila_san' }
   ];
 
   return (
@@ -18,7 +17,7 @@ const Contact: React.FC = () => {
           </h2>
           <div className="h-px w-16 bg-stone-400 mx-auto mb-8"></div>
           <p className="text-lg text-stone-600 font-light leading-relaxed max-w-2xl mx-auto">
-            Whether you're looking to collaborate on a project, discuss ideas, or simply say hello, I'd love to hear from you. Every great creation begins with a conversation.
+            Whether you're looking to discuss ideas, collaborate on a project or simply say hello, I'd love to hear from you. Every great creation begins with a conversation.
           </p>
         </div>
 
@@ -45,7 +44,7 @@ const Contact: React.FC = () => {
 
         <div className="text-center">
           <p className="text-sm text-stone-500 font-light">
-            Based in Los Angeles, working with clients worldwide
+            Based in San Francisco.
           </p>
         </div>
       </div>

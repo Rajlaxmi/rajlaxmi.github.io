@@ -6,7 +6,7 @@ export const blogPost2: BlogPost = {
   excerpt: 'Why having your own space to create, explore, and build is essential for innovation and personal growth—drawing inspiration from Silicon Valley garages.',
   date: '2024-01-22',
   readTime: '4 min read',
-  category: 'Culture',
+  category: 'Productivity',
   slug: 'power-of-personal-garage',
   content: [
     { type: 'paragraph', text: 'A dedicated space for creation, exploration, and building can be transformative. In Silicon Valley, the garage has become a symbol of innovation and entrepreneurship.' },

@@ -6,7 +6,7 @@ export const blogPost1: BlogPost = {
   excerpt: 'Explore the three essential layers of critical thinking—Elements of Reasoning, Intellectual Standards, and Intellectual Virtues—based on the framework by Richard Paul & Linda Elder.',
   date: '2024-01-15',
   readTime: '5 min read',
-  category: 'Philosophy',
+  category: 'Reasoning',
   slug: 'critical-thinking-framework',
   content: [
     { type: 'paragraph', text: 'Critical thinking is the art of analyzing and evaluating thinking with a view to improving it. Richard Paul & Linda Elder describe a framework for taking charge of the structures of thought and applying intellectual standards to them.' },
