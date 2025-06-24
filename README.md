@@ -1,6 +1,8 @@
 rajlaxmi.github.io
 
-Read LICENSE.
+
+# Read LICENSE
+Copyrighted.
 
 ## Deployment to GitHub Pages
 
