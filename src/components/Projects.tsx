@@ -13,28 +13,28 @@ interface Project {
 const Projects: React.FC = () => {
   const projects: Project[] = [
     {
-      title: 'Mindful Task Manager',
-      description: 'A minimalist productivity app built with React and TypeScript. Features clean design, smooth animations, and focus on essential functionality.',
-      tags: ['React', 'TypeScript', 'Tailwind CSS', 'Local Storage'],
+      title: 'Attention-Gated-Networks',
+      description: 'Exploring attention mechanisms in neural networks for computer vision tasks.',
+      tags: ['PyTorch', 'Computer Vision', 'Attention Models'],
       liveUrl: '#',
       githubUrl: '#',
-      image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800'
+      image: 'https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=800'
     },
     {
-      title: 'Portfolio Architecture',
-      description: 'A clean, responsive portfolio template focusing on typography and white space. Built with performance and accessibility in mind.',
-      tags: ['React', 'Vite', 'Responsive Design', 'SEO'],
+      title: 'Immersive Negotiator',
+      description: 'A virtual reality experience for negotiation training, using AI-powered avatars.',
+      tags: ['Unity', 'AI', 'Natural Language Processing'],
       liveUrl: '#',
       githubUrl: '#',
-      image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800'
+      image: 'https://images.pexels.com/photos/3184431/pexels-photo-3184431.jpeg?auto=compress&cs=tinysrgb&w=800'
     },
     {
-      title: 'Data Visualization Suite',
-      description: 'Interactive dashboard for complex data sets. Emphasizes clarity and user experience over flashy graphics.',
-      tags: ['D3.js', 'React', 'API Integration', 'Charts'],
+      title: 'Generative UI',
+      description: 'An intelligent tutoring system that generates UI while teaching.',
+      tags: ['React', 'AI', 'Educational Technology'],
       liveUrl: '#',
       githubUrl: '#',
-      image: 'https://images.pexels.com/photos/590020/pexels-photo-590020.jpg?auto=compress&cs=tinysrgb&w=800'
+      image: 'https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=800'
     }
   ];
 

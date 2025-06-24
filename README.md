@@ -31,3 +31,9 @@ https://rajlaxmi.github.io/
 - The deployment scripts are defined in `package.json`:
   - `predeploy`: Runs the build
   - `deploy`: Publishes `dist/` to GitHub Pages using `gh-pages`
+
+## Recent Projects Added
+
+- Attention-Gated-Networks
+- Immersive Negotiator
+- Generative Tutor
