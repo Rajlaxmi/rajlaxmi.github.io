@@ -8,6 +8,7 @@ interface Project {
   liveUrl?: string;
   githubUrl?: string;
   image: string;
+  video?: string;
 }
 
 const Projects: React.FC = () => {
@@ -18,7 +19,8 @@ const Projects: React.FC = () => {
       tags: ['PyTorch', 'Computer Vision', 'Attention Models'],
       liveUrl: '#',
       githubUrl: '#',
-      image: 'https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=800'
+      image: 'https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=800',
+      video: '/neuralnet.mp4'
     },
     {
       title: 'Immersive Negotiator',
@@ -26,7 +28,8 @@ const Projects: React.FC = () => {
       tags: ['Unity', 'AI', 'Natural Language Processing'],
       liveUrl: '#',
       githubUrl: '#',
-      image: 'https://images.pexels.com/photos/3184431/pexels-photo-3184431.jpeg?auto=compress&cs=tinysrgb&w=800'
+      image: 'https://images.pexels.com/photos/3184431/pexels-photo-3184431.jpeg?auto=compress&cs=tinysrgb&w=800',
+      video: '/negotiator.mp4'
     },
     {
       title: 'Generative UI',
@@ -34,7 +37,8 @@ const Projects: React.FC = () => {
       tags: ['React', 'AI', 'Educational Technology'],
       liveUrl: '#',
       githubUrl: '#',
-      image: 'https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=800'
+      image: 'https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=800',
+      video: '/generative-ui.mp4'
     }
   ];
 
@@ -56,11 +60,22 @@ const Projects: React.FC = () => {
             <div key={index} className="group">
               <div className="bg-stone-50 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
                 <div className="aspect-video bg-gradient-to-br from-stone-200 to-stone-300 relative overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
+                  {project.video ? (
+                    <video 
+                      src={project.video}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  ) : (
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  )}
                   <div className="absolute inset-0 bg-stone-900/20 group-hover:bg-stone-900/0 transition-colors"></div>
                 </div>
                 
