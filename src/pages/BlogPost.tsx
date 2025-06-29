@@ -56,9 +56,6 @@ const BlogPost: React.FC = () => {
               <ArrowLeft size={16} />
               <span className="text-sm font-light">Back to Portfolio</span>
             </Link>
-            <button className="p-2 text-stone-600 hover:text-stone-800 transition-colors">
-              <Share2 size={16} />
-            </button>
           </div>
         </div>
       </header>
