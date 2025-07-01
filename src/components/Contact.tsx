@@ -45,6 +45,7 @@ const Contact: React.FC = () => {
         <div className="text-center">
           <p className="text-sm text-stone-500 font-light">
             Based in San Francisco.
+            Copyright (c) 2025 Rajlaxmi.
           </p>
         </div>
       </div>
