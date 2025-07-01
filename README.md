@@ -2,7 +2,7 @@ rajlaxmi.github.io
 
 
 # Read LICENSE
-Copyrighted.
+Copyright (c) 2025 Rajlaxmi
 
 ## Deployment to GitHub Pages
 
