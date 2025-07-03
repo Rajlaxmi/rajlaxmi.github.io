@@ -4,7 +4,7 @@ export const PersonalGarage: BlogPost = {
   id: '2',
   title: 'The Power of a Personal Garage',
   excerpt: 'Why having your own space to create, explore, and build is essential for innovation and personal growth—drawing inspiration from Silicon Valley garages.',
-  date: '2024-01-22',
+  date: '2025-05-01',
   readTime: '4 min read',
   category: 'Productivity',
   slug: 'power-of-personal-garage',

@@ -4,8 +4,8 @@ export const CriticalThinkingFramework: BlogPost = {
   id: '1',
   title: 'Critical Thinking Framework',
   excerpt: 'Explore the three essential layers of critical thinking—Elements of Reasoning, Intellectual Standards, and Intellectual Virtues—based on the framework...',
-  date: '2024-01-15',
-  readTime: '1 min read',
+  date: '2025-06-01',
+  readTime: '5 min read',
   category: 'Reasoning',
   slug: 'critical-thinking-framework',
   content: [
