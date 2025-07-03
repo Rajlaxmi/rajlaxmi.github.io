@@ -6,7 +6,7 @@ export const Entelechy: BlogPost = {
   excerpt: 'In philosphy or metaphysics, actuality or realisation as opposed to potentiality.',
   date: '2024-01-15',
   readTime: '2 min read',
-  category: 'Reasoning',
+  category: 'Philosophy',
   slug: 'entelechy',
   content: [
     { type: 'paragraph', text: 'In philosphy or metaphysics, actuality or realisation as opposed to potentiality.' },
