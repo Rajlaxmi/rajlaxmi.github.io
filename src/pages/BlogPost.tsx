@@ -93,15 +93,22 @@ const BlogPost: React.FC = () => {
               {post.content.map((section, index) => (
                 <div key={index}>
                   {section.type === 'paragraph' && (
-                    <p className="text-lg leading-relaxed">{section.text}</p>
+                    <p 
+                      className="text-lg leading-relaxed"
+                      dangerouslySetInnerHTML={{ __html: section.text }}
+                    />
                   )}
                   {section.type === 'heading' && (
-                    <h2 className="text-2xl font-light text-stone-800 mt-12 mb-6">{section.text}</h2>
+                    <h2 
+                      className="text-2xl font-light text-stone-800 mt-12 mb-6"
+                      dangerouslySetInnerHTML={{ __html: section.text }}
+                    />
                   )}
                   {section.type === 'quote' && (
-                    <blockquote className="border-l-2 border-stone-300 pl-8 my-8 italic text-xl text-stone-600">
-                      {section.text}
-                    </blockquote>
+                    <blockquote 
+                      className="border-l-2 border-stone-300 pl-8 my-8 italic text-xl text-stone-600"
+                      dangerouslySetInnerHTML={{ __html: section.text }}
+                    />
                   )}
                   {section.type === 'image' && (
                     <img
@@ -133,9 +140,8 @@ const BlogPost: React.FC = () => {
                                 <td
                                   key={cellIndex}
                                   className="px-6 py-4 text-sm text-stone-600 border-b border-stone-100"
-                                >
-                                  {cell}
-                                </td>
+                                  dangerouslySetInnerHTML={{ __html: cell }}
+                                />
                               ))}
                             </tr>
                           ))}

@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Blog content formatting */
+.prose strong {
+  font-weight: 600;
+  color: #1c1917;
+}
+
+.prose em {
+  font-style: italic;
+}
+
+.prose code {
+  background-color: #f5f5f4;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-family: ui-monospace, SFMono-Regular, 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.875em;
+  color: #dc2626;
+}

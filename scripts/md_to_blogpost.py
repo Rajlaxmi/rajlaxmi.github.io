@@ -83,7 +83,7 @@ def convert_markdown_to_content(markdown):
             if current_paragraph:
                 content.append({
                     'type': 'paragraph',
-                    'text': current_paragraph.strip()
+                    'text': process_inline_formatting(current_paragraph.strip())
                 })
                 current_paragraph = ''
             i += 1
@@ -95,7 +95,7 @@ def convert_markdown_to_content(markdown):
             if current_paragraph:
                 content.append({
                     'type': 'paragraph',
-                    'text': current_paragraph.strip()
+                    'text': process_inline_formatting(current_paragraph.strip())
                 })
                 current_paragraph = ''
             
@@ -103,7 +103,7 @@ def convert_markdown_to_content(markdown):
             text = re.sub(r'^#+\s*', '', line)
             content.append({
                 'type': 'heading',
-                'text': text
+                'text': process_inline_formatting(text)
             })
             i += 1
             continue
@@ -115,7 +115,7 @@ def convert_markdown_to_content(markdown):
             if current_paragraph:
                 content.append({
                     'type': 'paragraph',
-                    'text': current_paragraph.strip()
+                    'text': process_inline_formatting(current_paragraph.strip())
                 })
                 current_paragraph = ''
             
@@ -136,14 +136,14 @@ def convert_markdown_to_content(markdown):
             if current_paragraph:
                 content.append({
                     'type': 'paragraph',
-                    'text': current_paragraph.strip()
+                    'text': process_inline_formatting(current_paragraph.strip())
                 })
                 current_paragraph = ''
             
             text = re.sub(r'^>\s*', '', line)
             content.append({
                 'type': 'quote',
-                'text': text
+                'text': process_inline_formatting(text)
             })
             i += 1
             continue
@@ -154,7 +154,7 @@ def convert_markdown_to_content(markdown):
             if current_paragraph:
                 content.append({
                     'type': 'paragraph',
-                    'text': current_paragraph.strip()
+                    'text': process_inline_formatting(current_paragraph.strip())
                 })
                 current_paragraph = ''
             
@@ -176,7 +176,7 @@ def convert_markdown_to_content(markdown):
     if current_paragraph:
         content.append({
             'type': 'paragraph',
-            'text': current_paragraph.strip()
+            'text': process_inline_formatting(current_paragraph.strip())
         })
     
     return content
@@ -194,6 +194,19 @@ def generate_variable_name(title):
     # Remove special characters and convert to PascalCase
     words = re.findall(r'[a-zA-Z0-9]+', title)
     return ''.join(word.capitalize() for word in words)
+
+def process_inline_formatting(text):
+    """Process inline markdown formatting like bold and italic"""
+    # Convert **bold** to <strong>bold</strong>
+    text = re.sub(r'\*\*(.*?)\*\*', r'<strong>\1</strong>', text)
+    
+    # Convert *italic* to <em>italic</em> (but not if it's already part of **)
+    text = re.sub(r'(?<!\*)\*([^*]+?)\*(?!\*)', r'<em>\1</em>', text)
+    
+    # Convert `code` to <code>code</code>
+    text = re.sub(r'`([^`]+?)`', r'<code>\1</code>', text)
+    
+    return text
 
 def calculate_read_time(content):
     """Calculate estimated read time based on content"""
