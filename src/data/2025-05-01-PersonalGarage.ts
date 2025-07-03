@@ -1,6 +1,6 @@
 import { BlogPost } from './blogPosts';
 
-export const blogPost2: BlogPost = {
+export const PersonalGarage: BlogPost = {
   id: '2',
   title: 'The Power of a Personal Garage',
   excerpt: 'Why having your own space to create, explore, and build is essential for innovation and personal growth—drawing inspiration from Silicon Valley garages.',

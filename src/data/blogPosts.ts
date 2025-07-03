@@ -9,13 +9,14 @@ export interface BlogPost {
   content: Array<
     | { type: 'paragraph' | 'heading' | 'quote'; text: string }
     | { type: 'image'; src: string; alt?: string }
+    | { type: 'table'; headers: string[]; rows: string[][] }
   >;
 }
 
-import { blogPost1 } from './blogPost1.ts';
-import { blogPost2 } from './blogPost2.ts';
+import { CriticalThinkingFramework} from './2025-06-01-CriticalThinking.ts';
+import { PersonalGarage } from './2025-05-01-PersonalGarage.ts';
 
 export const blogPosts: BlogPost[] = [
-  blogPost1,
-  blogPost2,
+  PersonalGarage,
+  CriticalThinkingFramework,
 ];

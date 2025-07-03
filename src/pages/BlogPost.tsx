@@ -111,6 +111,38 @@ const BlogPost: React.FC = () => {
                       style={{ maxHeight: 400 }}
                     />
                   )}
+                  {section.type === 'table' && (
+                    <div className="my-8 overflow-x-auto">
+                      <table className="min-w-full border border-stone-200 rounded-lg overflow-hidden">
+                        <thead className="bg-stone-50">
+                          <tr>
+                            {section.headers.map((header, headerIndex) => (
+                              <th
+                                key={headerIndex}
+                                className="px-6 py-3 text-left text-sm font-medium text-stone-700 border-b border-stone-200"
+                              >
+                                {header}
+                              </th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody className="bg-white divide-y divide-stone-200">
+                          {section.rows.map((row, rowIndex) => (
+                            <tr key={rowIndex} className="hover:bg-stone-50">
+                              {row.map((cell, cellIndex) => (
+                                <td
+                                  key={cellIndex}
+                                  className="px-6 py-4 text-sm text-stone-600 border-b border-stone-100"
+                                >
+                                  {cell}
+                                </td>
+                              ))}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
