@@ -16,10 +16,8 @@ export interface BlogPost {
 import { PersonalGarage } from './2025-05-01-PersonalGarage.ts';
 import { CriticalThinkingFramework} from './2025-06-01-CriticalThinking.ts';
 import { Entelechy } from './2025-07-01-Entelechy.ts';
-import { LearningGuideToRampingUp } from './2025-07-04-Ramping-Up.ts'
 
 export const blogPosts: BlogPost[] = [
   PersonalGarage,
-  LearningGuideToRampingUp,
   Entelechy,
 ];
