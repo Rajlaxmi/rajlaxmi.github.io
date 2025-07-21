@@ -20,4 +20,5 @@ import { Entelechy } from './2025-07-01-Entelechy.ts';
 export const blogPosts: BlogPost[] = [
   PersonalGarage,
   Entelechy,
+  CriticalThinkingFramework
 ];
