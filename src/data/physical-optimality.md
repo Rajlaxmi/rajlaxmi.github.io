@@ -17,5 +17,6 @@ Low bone density + knee wear:
 
 ### Experiments to Run
 
-@today
+Exercise Log: March 30th, 2026
+
 
