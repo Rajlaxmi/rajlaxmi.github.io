@@ -20,3 +20,239 @@
   font-size: 0.875em;
   color: #dc2626;
 }
+
+/* Rich HTML blog blocks */
+.blog-html .toc {
+  background-color: #fafaf9;
+  border: 1px solid #e7e5e4;
+  border-radius: 0.5rem;
+  padding: 1.5rem 2rem;
+  margin: 2rem 0 2.5rem;
+}
+.blog-html .toc-title {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #78716c;
+  margin-bottom: 0.75rem;
+}
+.blog-html .toc ol {
+  list-style: decimal;
+  padding-left: 1.25rem;
+  margin: 0;
+}
+.blog-html .toc li {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #57534e;
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+}
+.blog-html .toc a {
+  color: #57534e;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.blog-html .toc a:hover {
+  color: #1c1917;
+  border-bottom-color: #a8a29e;
+}
+.blog-html .toc li.toc-sub {
+  list-style: none;
+  padding-left: 0.75rem;
+  font-size: 0.825rem;
+  margin-bottom: 0.25rem;
+  color: #78716c;
+}
+
+.blog-html figure {
+  margin: 2.5rem 0;
+}
+.blog-html figure img {
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid #e7e5e4;
+}
+.blog-html .figure-placeholder {
+  background: linear-gradient(135deg, #f5f5f4 0%, #e7e5e4 100%);
+  border-radius: 0.5rem;
+  border: 1px solid #d6d3d1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  gap: 0.75rem;
+}
+.blog-html .figure-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #a8a29e;
+}
+.blog-html .figure-desc {
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #78716c;
+  text-align: center;
+  max-width: 32rem;
+}
+.blog-html figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.825rem;
+  font-weight: 300;
+  color: #78716c;
+  line-height: 1.6;
+  text-align: center;
+}
+.blog-html figcaption strong {
+  color: #57534e;
+  font-weight: 500;
+}
+
+.blog-html h3 {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: #1c1917;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.01em;
+}
+
+.blog-html .pullquote {
+  border-left: 3px solid #1c1917;
+  padding: 0.5rem 0 0.5rem 1.75rem;
+  margin: 2.5rem 0;
+}
+.blog-html .pullquote p {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: #1c1917;
+  line-height: 1.65;
+  font-style: italic;
+  margin: 0;
+}
+
+.blog-html .callout {
+  background-color: #fafaf9;
+  border: 1px solid #e7e5e4;
+  border-radius: 0.5rem;
+  padding: 1.25rem 1.5rem;
+  margin: 2rem 0;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #57534e;
+  line-height: 1.65;
+}
+.blog-html .callout strong {
+  color: #1c1917;
+  font-weight: 500;
+}
+
+.blog-html pre {
+  background-color: #1c1917;
+  color: #e7e5e4;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  overflow-x: auto;
+  font-family: ui-monospace, SFMono-Regular, 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.825rem;
+  line-height: 1.7;
+}
+.blog-html pre code {
+  background: none;
+  color: inherit;
+  padding: 0;
+  font-size: inherit;
+}
+.blog-html .pre-label {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #78716c;
+  margin-bottom: 0.5rem;
+}
+
+.blog-html .results-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.blog-html .result-card {
+  background: #fafaf9;
+  border: 1px solid #e7e5e4;
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  text-align: center;
+}
+.blog-html .result-card .value {
+  font-size: 2rem;
+  font-weight: 200;
+  color: #1c1917;
+  line-height: 1;
+  margin-bottom: 0.375rem;
+}
+.blog-html .result-card .label {
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: #78716c;
+  line-height: 1.4;
+}
+
+.blog-html .bar-chart {
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.blog-html .bar-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.blog-html .bar-name {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #57534e;
+  width: 9rem;
+  flex-shrink: 0;
+  text-align: right;
+}
+.blog-html .bar-track {
+  flex: 1;
+  height: 1.5rem;
+  background: #f5f5f4;
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+.blog-html .bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  background: #1c1917;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 0.5rem;
+}
+.blog-html .bar-fill.accent {
+  background: #44403c;
+}
+.blog-html .bar-value {
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: #e7e5e4;
+}
+.blog-html .bar-value-outside {
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: #78716c;
+  margin-left: 0.5rem;
+  flex-shrink: 0;
+}

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 interface HeaderProps {
@@ -32,7 +33,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
     { id: 'influences', label: 'Influences' },
     { id: 'projects', label: 'Projects' },
     { id: 'skills', label: 'Skills' },
-    { id: 'blog', label: 'Blog' },
+    { id: 'blog', label: 'Blog', href: '/blog' },
     { id: 'contact', label: 'Contact' }
   ];
 
@@ -51,17 +52,27 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            {navItems.map(item => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className={`text-sm font-light tracking-wide transition-colors hover:text-stone-600 ${
-                  activeSection === item.id ? 'text-stone-800 border-b border-stone-400' : 'text-stone-500'
-                }`}
-              >
-                {item.label}
-              </button>
-            ))}
+            {navItems.map(item =>
+              item.href ? (
+                <Link
+                  key={item.id}
+                  to={item.href}
+                  className="text-sm font-light tracking-wide transition-colors hover:text-stone-600 text-stone-500"
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className={`text-sm font-light tracking-wide transition-colors hover:text-stone-600 ${
+                    activeSection === item.id ? 'text-stone-800 border-b border-stone-400' : 'text-stone-500'
+                  }`}
+                >
+                  {item.label}
+                </button>
+              )
+            )}
           </nav>
 
           {/* Mobile Menu Button */}
@@ -76,17 +87,28 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <nav className="md:hidden mt-4 py-4 border-t border-stone-200">
-            {navItems.map(item => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className={`block w-full text-left py-2 text-sm font-light tracking-wide transition-colors hover:text-stone-600 ${
-                  activeSection === item.id ? 'text-stone-800' : 'text-stone-500'
-                }`}
-              >
-                {item.label}
-              </button>
-            ))}
+            {navItems.map(item =>
+              item.href ? (
+                <Link
+                  key={item.id}
+                  to={item.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block w-full text-left py-2 text-sm font-light tracking-wide transition-colors hover:text-stone-600 text-stone-500"
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className={`block w-full text-left py-2 text-sm font-light tracking-wide transition-colors hover:text-stone-600 ${
+                    activeSection === item.id ? 'text-stone-800' : 'text-stone-500'
+                  }`}
+                >
+                  {item.label}
+                </button>
+              )
+            )}
           </nav>
         )}
       </div>
