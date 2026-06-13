@@ -17,7 +17,6 @@ export interface BlogPost {
 import { PersonalGarage } from './2025-05-01-PersonalGarage.ts';
 import { CriticalThinkingFramework} from './2025-06-01-CriticalThinking.ts';
 import { Entelechy } from './2025-07-01-Entelechy.ts';
-import { ChainOfThought } from './2026-04-01-ChainOfThought.ts';
 
 export const blogPosts: BlogPost[] = [
   ChainOfThought,
