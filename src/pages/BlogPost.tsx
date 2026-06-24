@@ -11,23 +11,6 @@ const BlogPost: React.FC = () => {
     window.scrollTo(0, 0);
   }, [slug]);
 
-  useEffect(() => {
-    const handleHashClick = (e: MouseEvent) => {
-      const anchor = (e.target as HTMLElement).closest('a');
-      if (!anchor) return;
-      const href = anchor.getAttribute('href');
-      if (!href?.startsWith('#')) return;
-      e.preventDefault();
-      const el = document.getElementById(href.slice(1));
-      if (el) {
-        const top = el.getBoundingClientRect().top + window.scrollY - 80;
-        window.scrollTo({ top, behavior: 'smooth' });
-      }
-    };
-    document.addEventListener('click', handleHashClick);
-    return () => document.removeEventListener('click', handleHashClick);
-  }, []);
-
   if (!post) {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center">
@@ -66,12 +49,12 @@ const BlogPost: React.FC = () => {
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-stone-100">
         <div className="max-w-4xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <Link
-              to="/blog"
+            <Link 
+              to="/"
               className="inline-flex items-center space-x-2 text-stone-600 hover:text-stone-800 transition-colors"
             >
               <ArrowLeft size={16} />
-              <span className="text-sm font-light">Back to Blog</span>
+              <span className="text-sm font-light">Back to Portfolio</span>
             </Link>
           </div>
         </div>
@@ -166,12 +149,6 @@ const BlogPost: React.FC = () => {
                       </table>
                     </div>
                   )}
-                  {section.type === 'html' && (
-                    <div
-                      className="blog-html"
-                      dangerouslySetInnerHTML={{ __html: section.html }}
-                    />
-                  )}
                 </div>
               ))}
             </div>
@@ -185,12 +162,12 @@ const BlogPost: React.FC = () => {
               <p className="text-sm text-stone-500 font-light mb-8">
                 Thank you for reading
               </p>
-              <Link
-                to="/blog"
+              <Link 
+                to="/"
                 className="inline-flex items-center space-x-2 text-stone-600 hover:text-stone-800 transition-colors"
               >
                 <ArrowLeft size={14} />
-                <span className="text-sm font-light">Return to Blog</span>
+                <span className="text-sm font-light">Return to Portfolio</span>
               </Link>
             </div>
           </footer>

@@ -10,7 +10,6 @@ export interface BlogPost {
     | { type: 'paragraph' | 'heading' | 'quote'; text: string }
     | { type: 'image'; src: string; alt?: string }
     | { type: 'table'; headers: string[]; rows: string[][] }
-    | { type: 'html'; html: string }
   >;
 }
 
@@ -19,7 +18,6 @@ import { CriticalThinkingFramework} from './2025-06-01-CriticalThinking.ts';
 import { Entelechy } from './2025-07-01-Entelechy.ts';
 
 export const blogPosts: BlogPost[] = [
-  ChainOfThought,
   PersonalGarage,
   Entelechy,
   CriticalThinkingFramework
