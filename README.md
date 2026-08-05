@@ -60,6 +60,28 @@ Frontmatter is parsed by `src/lib/frontmatter.ts`; rendering happens in
 Raw HTML in markdown is intentionally **not** rendered — use markdown syntax
 (`**bold**` rather than `<b>bold</b>`).
 
+## Adding a project
+
+Featured work lives in `src/content/projects.ts`. Add an entry to the array and
+the section lays itself out — no markup to touch.
+
+```ts
+{
+  title: 'Attention-Gated-Networks',
+  description: 'One or two sentences.',
+  tags: ['PyTorch', 'Computer Vision'],
+  video: '/neuralnet.mp4',        // optional; served from public/
+  image: 'https://…',             // optional; used only when there is no video
+  liveUrl: 'https://…',           // optional
+  githubUrl: 'https://…',         // optional
+}
+```
+
+`liveUrl` and `githubUrl` are hidden when absent or still set to the `"#"`
+placeholder, so a project never renders a dead link. Entries with neither
+`video` nor `image` run full width instead of leaving an empty column, and the
+media side alternates left/right down the list automatically.
+
 ## Design system
 
 Tokens live as CSS custom properties in `src/index.css` and are exposed to

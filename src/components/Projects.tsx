@@ -2,43 +2,7 @@ import React from 'react';
 import { ArrowUpRight, Github } from 'lucide-react';
 import Section from './Section';
 import LoopingVideo from './LoopingVideo';
-
-interface Project {
-  title: string;
-  description: string;
-  tags: string[];
-  liveUrl?: string;
-  githubUrl?: string;
-  image: string;
-  video?: string;
-}
-
-const projects: Project[] = [
-  {
-    title: 'Attention-Gated-Networks',
-    description: 'Exploring attention mechanisms in neural networks for computer vision tasks.',
-    tags: ['PyTorch', 'Computer Vision', 'Attention Models'],
-    image:
-      'https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=800',
-    video: '/neuralnet.mp4',
-  },
-  {
-    title: 'Immersive Negotiator',
-    description: 'A virtual reality experience for negotiation training, using AI-powered avatars.',
-    tags: ['Unity', 'AI', 'Natural Language Processing'],
-    image:
-      'https://images.pexels.com/photos/3184431/pexels-photo-3184431.jpeg?auto=compress&cs=tinysrgb&w=800',
-    video: '/negotiator.mp4',
-  },
-  {
-    title: 'Generative UI',
-    description: 'An intelligent tutoring system that generates UI while teaching.',
-    tags: ['React', 'AI', 'Educational Technology'],
-    image:
-      'https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=800',
-    video: '/generative-ui.mp4',
-  },
-];
+import { projects } from '../content/projects';
 
 /** Placeholder hrefs ("#") are treated as "not published yet" and hidden. */
 const isLive = (url?: string): url is string => Boolean(url) && url !== '#';
@@ -54,30 +18,35 @@ const Projects: React.FC = () => (
       {projects.map((project, index) => (
         <li
           key={project.title}
-          className="grid items-center gap-8 md:grid-cols-2 md:gap-12"
+          className={`grid items-center gap-8 md:gap-12 ${
+            project.video || project.image ? 'md:grid-cols-2' : ''
+          }`}
           data-reveal
         >
-          <div
-            className={`overflow-hidden border border-rule bg-surface ${
-              index % 2 === 1 ? 'md:order-2' : ''
-            }`}
-          >
-            <div className="aspect-video">
-              {project.video ? (
-                <LoopingVideo
-                  src={project.video}
-                  className="h-full w-full object-cover transition-transform duration-[900ms] ease-editorial hover:scale-[1.03]"
-                />
-              ) : (
-                <img
-                  src={project.image}
-                  alt=""
-                  loading="lazy"
-                  className="h-full w-full object-cover"
-                />
-              )}
+          {/* A project with no media simply runs full width. */}
+          {(project.video || project.image) && (
+            <div
+              className={`overflow-hidden border border-rule bg-surface ${
+                index % 2 === 1 ? 'md:order-2' : ''
+              }`}
+            >
+              <div className="aspect-video">
+                {project.video ? (
+                  <LoopingVideo
+                    src={project.video}
+                    className="h-full w-full object-cover transition-transform duration-[900ms] ease-editorial hover:scale-[1.03]"
+                  />
+                ) : (
+                  <img
+                    src={project.image}
+                    alt=""
+                    loading="lazy"
+                    className="h-full w-full object-cover"
+                  />
+                )}
+              </div>
             </div>
-          </div>
+          )}
 
           <div>
             <p className="eyebrow mb-3">{String(index + 1).padStart(2, '0')}</p>
