@@ -8,13 +8,19 @@ import Skills from '../components/Skills';
 import Projects from '../components/Projects';
 import Blog from '../components/Blog';
 import Contact from '../components/Contact';
+import Footer from '../components/Footer';
 import useActiveSection from '../hooks/useActiveSection';
+import useReveal from '../hooks/useReveal';
+
+// Module scope keeps the reference stable across renders for useActiveSection.
+const SECTION_IDS = ['hero', 'about', 'influences', 'projects', 'skills', 'blog', 'contact'];
 
 const Portfolio: React.FC = () => {
-  const activeSection = useActiveSection();
+  const activeSection = useActiveSection(SECTION_IDS);
+  useReveal();
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-paper">
       <Header activeSection={activeSection} />
       <main>
         <Hero />
@@ -26,6 +32,7 @@ const Portfolio: React.FC = () => {
         <Blog />
         <Contact />
       </main>
+      <Footer />
     </div>
   );
 };

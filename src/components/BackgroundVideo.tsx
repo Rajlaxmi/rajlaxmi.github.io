@@ -1,23 +1,25 @@
 import React from 'react';
+import LoopingVideo from './LoopingVideo';
 
-const BackgroundVideo: React.FC = () => {
-  return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute z-0 w-auto min-w-full min-h-full max-w-none"
-      >
-        <source src="/intelligence.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div className="relative z-10 text-center text-white p-4">
-        {/* You can add any overlay content here if you want */}
-      </div>
-    </section>
-  );
-};
+const FADE = 'linear-gradient(to bottom, transparent, black 26%, black 64%, transparent)';
 
-export default BackgroundVideo; 
+/**
+ * A full-bleed interlude between the hero and the writing. The clip is masked
+ * into the page at top and bottom so it reads as part of the paper rather than
+ * a banner dropped on top of it.
+ */
+const BackgroundVideo: React.FC = () => (
+  <section aria-hidden="true" className="overflow-hidden">
+    <div
+      className="h-[52vh] min-h-[280px] w-full sm:h-[64vh]"
+      style={{ maskImage: FADE, WebkitMaskImage: FADE }}
+    >
+      <LoopingVideo
+        src="/intelligence.mp4"
+        className="h-full w-full object-cover opacity-80 contrast-[1.05] saturate-[0.55] dark:opacity-60"
+      />
+    </div>
+  </section>
+);
+
+export default BackgroundVideo;

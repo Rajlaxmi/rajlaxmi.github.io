@@ -1,56 +1,54 @@
 import React from 'react';
-import { Mail, Linkedin, Twitter } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
+import Section from './Section';
 
-const Contact: React.FC = () => {
-  const socialLinks = [
-    { icon: <Mail size={20} />, label: 'Email', href: 'mailto:rajlaxmisah@example.com' },
-    { icon: <Linkedin size={20} />, label: 'LinkedIn', href: 'https://www.linkedin.com/in/rajlaxmisah' },
-    { icon: <Twitter size={20} />, label: 'Twitter', href: 'https://x.com/raila_san' }
-  ];
+interface ContactLink {
+  label: string;
+  value: string;
+  href: string;
+  external?: boolean;
+}
 
-  return (
-    <section id="contact" className="py-24 bg-stone-50">
-      <div className="max-w-4xl mx-auto px-6 text-center">
-        <div className="mb-16">
-          <h2 className="text-4xl md:text-5xl font-light tracking-wide text-stone-800 mb-6">
-            Get In Touch
-          </h2>
-          <div className="h-px w-16 bg-stone-400 mx-auto mb-8"></div>
-          <p className="text-lg text-stone-600 font-light leading-relaxed max-w-2xl mx-auto">
-            Whether you're looking to discuss ideas, collaborate on a project or simply say hello, I'd love to hear from you. Every great creation begins with a conversation.
-          </p>
-        </div>
+const contactLinks: ContactLink[] = [
+  { label: 'Email', value: 'rajlaxmisah@example.com', href: 'mailto:rajlaxmisah@example.com' },
+  {
+    label: 'LinkedIn',
+    value: 'in/rajlaxmisah',
+    href: 'https://www.linkedin.com/in/rajlaxmisah',
+    external: true,
+  },
+  { label: 'Twitter', value: '@raila_san', href: 'https://x.com/raila_san', external: true },
+];
 
-        <div className="mb-12">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-white rounded-full mb-6 shadow-sm">
-            <div className="w-3 h-3 bg-stone-400 rounded-full"></div>
-          </div>
-        </div>
-
-        <div className="flex justify-center space-x-8 mb-12">
-          {socialLinks.map((link, index) => (
-            <a
-              key={index}
-              href={link.href}
-              className="inline-flex items-center justify-center w-12 h-12 bg-white rounded-full text-stone-600 hover:text-stone-800 hover:shadow-md transition-all group"
-              aria-label={link.label}
-            >
-              <div className="group-hover:scale-110 transition-transform">
-                {link.icon}
-              </div>
-            </a>
-          ))}
-        </div>
-
-        <div className="text-center">
-          <p className="text-sm text-stone-500 font-light">
-            Based in San Francisco.
-            Copyright (c) 2025 Rajlaxmi.
-          </p>
-        </div>
-      </div>
-    </section>
-  );
-};
+const Contact: React.FC = () => (
+  <Section
+    id="contact"
+    index="06"
+    label="contact"
+    lead="Whether you're looking to discuss ideas, collaborate on a project or simply say hello, I'd love to hear from you. Every great creation begins with a conversation."
+  >
+    <ul className="mt-12 border-t border-rule">
+      {contactLinks.map((link) => (
+        <li key={link.label} data-reveal>
+          <a
+            href={link.href}
+            {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+            className="group flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 border-b border-rule py-5"
+          >
+            <span className="eyebrow">{link.label}</span>
+            <span className="flex items-center gap-2 text-[1.15rem] text-ink transition-colors duration-300 group-hover:text-accent">
+              {link.value}
+              <ArrowUpRight
+                size={14}
+                strokeWidth={1.5}
+                className="transition-transform duration-500 ease-editorial group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+              />
+            </span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </Section>
+);
 
 export default Contact;

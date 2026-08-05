@@ -1,43 +1,43 @@
 import React from 'react';
+import { ArrowUpRight } from 'lucide-react';
+import Section from './Section';
 
-const About: React.FC = () => {
-  return (
-    <section id="about" className="py-24 bg-white">
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-light tracking-wide text-stone-800 mb-6">
-            About
-          </h2>
-          <div className="h-px w-16 bg-stone-400 mx-auto"></div>
-        </div>
+const About: React.FC = () => (
+  <Section
+    id="about"
+    index="01"
+    label="about"
+    lead="I am an ML engineer on the applied machine learning teams at Google. My research interests include applying LLMs to reasoning and mathematics, alignment, and multimodality."
+  >
+    <p className="mt-8 max-w-measure text-muted" data-reveal>
+      I am driven by my curiosity and learning from the collective stream of consciousness of past
+      and present intellectuals. My other interests include Botany, Medical sciences, Human body,
+      History art and architecture, Political and governance structures around the world.
+    </p>
 
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          <div className="space-y-6">
-            <p className="text-lg text-stone-600 font-light leading-relaxed">
-            I am an ML engineer on the applied machine learning teams at Google. My research interests include applying LLMs to reasoning and mathematics, alignment, and multimodality.
-            </p>
-            
-            <p className="text-lg text-stone-600 font-light leading-relaxed">
-            I am driven by my curiosity and learning from the collective stream of consciousness of past and present intellectuals. My other interests include Botany, Medical sciences, Human body, History art and architecture, Political and governance structures around the world.
-            </p>
+    <blockquote
+      className="mt-12 max-w-measure border-l border-accent/50 pl-6 text-[1.15rem] italic text-ink"
+      data-reveal
+    >
+      Lux mentis, Lux orbis. Light of the mind, light of the world.
+    </blockquote>
 
-          </div>
-
-          <div className="relative">
-            <div className="bg-stone-100 rounded-lg p-8 text-center">
-              <div className="mb-6">
-                <div className="w-16 h-16 bg-stone-300 rounded-full mx-auto mb-4 opacity-60"></div>
-                <div className="h-px w-12 bg-stone-400 mx-auto"></div>
-              </div>
-              <blockquote className="text-stone-700 font-light italic text-lg leading-relaxed">
-                Lux mentis, Lux orbis. Light of the mind, light of the world.
-              </blockquote>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
+    <p className="mt-12" data-reveal>
+      <a
+        href="/RajlaxmiResume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group inline-flex items-center gap-2 text-muted transition-colors duration-300 hover:text-accent"
+      >
+        <span className="eyebrow">résumé</span>
+        <ArrowUpRight
+          size={13}
+          strokeWidth={1.5}
+          className="transition-transform duration-500 ease-editorial group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+        />
+      </a>
+    </p>
+  </Section>
+);
 
 export default About;

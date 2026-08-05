@@ -2,21 +2,321 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Blog content formatting */
+/* ---------------------------------------------------------------------------
+   Design tokens
+
+   Warm paper light theme / warm near-black dark theme. Values are raw RGB
+   channels so Tailwind's `<alpha-value>` syntax works (see tailwind.config.js).
+   --------------------------------------------------------------------------- */
+@layer base {
+  :root {
+    --paper: 247 246 243;
+    --surface: 240 238 233;
+    --ink: 26 25 23;
+    --muted: 107 104 98;
+    --faint: 148 144 136;
+    --rule: 223 219 211;
+    --accent: 154 79 46;
+  }
+
+  .dark {
+    --paper: 19 18 17;
+    --surface: 28 26 24;
+    --ink: 232 229 223;
+    --muted: 154 149 140;
+    --faint: 122 117 109;
+    --rule: 46 43 39;
+    --accent: 201 120 79;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-paper font-serif text-ink antialiased;
+    font-size: 18px;
+    line-height: 1.65;
+    font-variant-numeric: oldstyle-nums;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Anchor targets clear the fixed header. */
+  [id] {
+    scroll-margin-top: 6rem;
+  }
+
+  ::selection {
+    background-color: rgb(var(--accent) / 0.18);
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(var(--accent));
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Tabular figures wherever numbers need to align (dates, rail counters). */
+  .font-mono {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@layer components {
+  /* Small tracked-out label used for section rails and metadata. */
+  .eyebrow {
+    @apply font-mono text-label uppercase text-faint;
+  }
+
+  /* Text link: the underline grows in from the left on hover. */
+  .link {
+    @apply relative text-ink transition-colors duration-300;
+    text-decoration: none;
+    background-image: linear-gradient(rgb(var(--accent)), rgb(var(--accent)));
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 0% 1px;
+    transition: background-size 0.4s cubic-bezier(0.22, 1, 0.36, 1), color 0.3s;
+  }
+
+  .link:hover,
+  .link:focus-visible {
+    @apply text-accent;
+    background-size: 100% 1px;
+  }
+
+  /* Persistent hairline underline, used for links inside prose. */
+  .link-quiet {
+    @apply text-ink transition-colors duration-300;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+    text-decoration-color: rgb(var(--rule));
+  }
+
+  .link-quiet:hover,
+  .link-quiet:focus-visible {
+    @apply text-accent;
+    text-decoration-color: rgb(var(--accent));
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Scroll reveal
+
+   Elements start hidden and are unhidden by useReveal's IntersectionObserver,
+   which sets data-revealed. The `no-motion` class (set when the user prefers
+   reduced motion) opts everything out.
+   --------------------------------------------------------------------------- */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+[data-reveal][data-revealed='true'] {
+  opacity: 1;
+  transform: none;
+}
+
+.no-motion [data-reveal],
+.no-motion [data-reveal][data-revealed='true'] {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Article prose
+
+   Hand-rolled rather than @tailwindcss/typography so the rhythm matches the
+   rest of the page exactly. Applied by <Prose> on rendered markdown.
+   --------------------------------------------------------------------------- */
+.prose {
+  @apply text-ink;
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+
+.prose > * + * {
+  margin-top: 1.5em;
+}
+
+.prose h2 {
+  @apply font-normal text-ink;
+  font-size: 1.75rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin-top: 2.75em;
+  margin-bottom: 0;
+}
+
+.prose h3 {
+  @apply font-normal text-ink;
+  font-size: 1.35rem;
+  line-height: 1.3;
+  margin-top: 2.25em;
+  margin-bottom: 0;
+}
+
+/* Bind a heading to the block that follows it — tighter than the 1.5em
+   default so headings read as attached to their section, not floating. */
+.prose h2 + *,
+.prose h3 + * {
+  margin-top: 0.9em;
+}
+
 .prose strong {
   font-weight: 600;
-  color: #1c1917;
+  @apply text-ink;
 }
 
 .prose em {
   font-style: italic;
 }
 
+.prose blockquote {
+  @apply border-l text-muted;
+  border-color: rgb(var(--accent) / 0.5);
+  padding-left: 1.5rem;
+  font-style: italic;
+  font-size: 1.2rem;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.prose blockquote p + p {
+  margin-top: 1em;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.35em;
+}
+
+.prose ul {
+  list-style: none;
+}
+
+.prose ul > li {
+  position: relative;
+}
+
+.prose ul > li::before {
+  content: '';
+  position: absolute;
+  left: -1.05em;
+  top: 0.72em;
+  width: 5px;
+  height: 1px;
+  background-color: rgb(var(--faint));
+}
+
+.prose ol {
+  list-style: decimal;
+}
+
+.prose ol > li::marker {
+  @apply text-faint;
+  font-size: 0.9em;
+}
+
+.prose li + li {
+  margin-top: 0.5em;
+}
+
+.prose a {
+  @apply link-quiet;
+}
+
 .prose code {
-  background-color: #f5f5f4;
-  padding: 0.125rem 0.25rem;
-  border-radius: 0.25rem;
-  font-family: ui-monospace, SFMono-Regular, 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace;
-  font-size: 0.875em;
-  color: #dc2626;
+  @apply bg-surface font-mono text-accent;
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+  font-size: 0.85em;
+}
+
+.prose pre {
+  @apply overflow-x-auto border border-rule bg-surface;
+  padding: 1.1rem 1.25rem;
+  border-radius: 4px;
+  line-height: 1.6;
+}
+
+.prose pre code {
+  @apply bg-transparent p-0 text-ink;
+  font-size: 0.85rem;
+}
+
+.prose img {
+  @apply border border-rule;
+  border-radius: 3px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.prose figure figcaption {
+  @apply text-center text-muted;
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-top: 0.9em;
+}
+
+.prose hr {
+  @apply border-rule;
+  margin: 3em 0;
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.prose thead th {
+  @apply border-b border-rule text-left font-normal text-faint;
+  font-family: theme('fontFamily.mono');
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0 1rem 0.6rem 0;
+  vertical-align: bottom;
+}
+
+.prose tbody td {
+  @apply border-b border-rule align-top text-muted;
+  padding: 0.85rem 1rem 0.85rem 0;
+}
+
+.prose tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.prose tbody td:first-child {
+  @apply text-ink;
+  white-space: nowrap;
+}
+
+/* Tables can be wider than the measure; let them scroll on their own. */
+.prose .table-scroll {
+  @apply -mx-6 overflow-x-auto px-6;
 }

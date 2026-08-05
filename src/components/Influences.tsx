@@ -1,87 +1,70 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Clock, Book, Globe, Lightbulb } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import Section from './Section';
 
-const Influences: React.FC = () => {
-  const featuredOrganizations = [
-    {
-      name: 'Long Now Foundation',
-      description: 'Encouraging long-term thinking in the framework of the next 10,000 years.',
-      category: 'Philosophy',
-      icon: <Clock size={20} />,
-    },
-    {
-      name: 'Standard Ebooks',
-      description: 'Lovingly formatted, open source public domain ebooks.',
-      category: 'Books',
-      icon: <Book size={20} />,
-    },
-    {
-      name: 'Internet Archive',
-      description: 'Universal access to all knowledge and digital preservation.',
-      category: 'Preservation',
-      icon: <Globe size={20} />,
-    },
-    {
-      name: 'Creative Commons',
-      description: 'Overcoming legal obstacles to sharing knowledge and creativity.',
-      category: 'Collaboration',
-      icon: <Lightbulb size={20} />,
-    }
-  ];
+interface Organization {
+  name: string;
+  description: string;
+  category: string;
+}
 
-  return (
-    <section id="influences" className="py-24 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-light tracking-wide text-stone-800 mb-6">
-            Influences
-          </h2>
-          <div className="h-px w-16 bg-stone-400 mx-auto mb-6"></div>
-          <p className="text-lg text-stone-600 font-light max-w-2xl mx-auto">
-            Organizations that have shaped my thinking and approach to creating meaningful, lasting work.
-          </p>
-        </div>
+const featuredOrganizations: Organization[] = [
+  {
+    name: 'Long Now Foundation',
+    description: 'Encouraging long-term thinking in the framework of the next 10,000 years.',
+    category: 'Philosophy',
+  },
+  {
+    name: 'Standard Ebooks',
+    description: 'Lovingly formatted, open source public domain ebooks.',
+    category: 'Books',
+  },
+  {
+    name: 'Internet Archive',
+    description: 'Universal access to all knowledge and digital preservation.',
+    category: 'Preservation',
+  },
+  {
+    name: 'Creative Commons',
+    description: 'Overcoming legal obstacles to sharing knowledge and creativity.',
+    category: 'Collaboration',
+  },
+];
 
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          {featuredOrganizations.map((org, index) => (
-            <div key={index} className="bg-stone-50 rounded-lg p-6 hover:shadow-md transition-shadow group">
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0">
-                  <div className="inline-flex items-center justify-center w-12 h-12 bg-white rounded-full text-stone-600 group-hover:bg-stone-100 transition-colors">
-                    {org.icon}
-                  </div>
-                </div>
-                <div className="flex-grow">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="text-lg font-light text-stone-800">
-                      {org.name}
-                    </h3>
-                    <span className="text-xs text-stone-500 font-light tracking-widest uppercase">
-                      {org.category}
-                    </span>
-                  </div>
-                  <p className="text-stone-600 font-light text-sm leading-relaxed">
-                    {org.description}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+const Influences: React.FC = () => (
+  <Section
+    id="influences"
+    index="02"
+    label="influences"
+    lead="Organizations that have shaped my thinking and approach to creating meaningful, lasting work."
+  >
+    <ul className="mt-12 border-t border-rule">
+      {featuredOrganizations.map((org) => (
+        <li key={org.name} className="border-b border-rule py-6" data-reveal>
+          <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
+            <h3 className="text-[1.25rem] text-ink">{org.name}</h3>
+            <span className="eyebrow">{org.category}</span>
+          </div>
+          <p className="mt-2 max-w-measure text-muted">{org.description}</p>
+        </li>
+      ))}
+    </ul>
 
-        <div className="text-center">
-          <Link 
-            to="/influences"
-            className="inline-flex items-center space-x-2 bg-stone-800 text-white px-8 py-3 rounded-full hover:bg-stone-700 transition-colors group"
-          >
-            <span className="font-light">Explore All Influences</span>
-            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-          </Link>
-        </div>
-      </div>
-    </section>
-  );
-};
+    <p className="mt-10" data-reveal>
+      <Link
+        to="/influences"
+        className="group inline-flex items-center gap-3 text-muted transition-colors duration-300 hover:text-accent"
+      >
+        <span className="eyebrow">all influences</span>
+        <ArrowRight
+          size={14}
+          strokeWidth={1.5}
+          className="transition-transform duration-500 ease-editorial group-hover:translate-x-1"
+        />
+      </Link>
+    </p>
+  </Section>
+);
 
 export default Influences;
