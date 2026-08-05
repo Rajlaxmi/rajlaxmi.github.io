@@ -229,6 +229,20 @@
   background-color: rgb(var(--faint));
 }
 
+/* GFM task lists: the checkbox stands in for the dash marker. */
+.prose ul.contains-task-list {
+  padding-left: 0;
+}
+
+.prose ul.contains-task-list > li::before {
+  content: none;
+}
+
+.prose li.task-list-item input[type='checkbox'] {
+  margin-right: 0.55em;
+  accent-color: rgb(var(--accent));
+}
+
 .prose ol {
   list-style: decimal;
 }
