@@ -4,9 +4,46 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Raila's Portfolio</title>
-    <script type="module" crossorigin src="/assets/index-8doHeZw_.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-fmZexuMW.css">
+
+    <title>Raila — ML engineer</title>
+    <meta
+      name="description"
+      content="Raila is an ML engineer on the applied machine learning teams at Google, working on LLMs for reasoning and mathematics, alignment, and multimodality."
+    />
+    <meta name="author" content="Rajlaxmi" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f7f6f3" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#131211" media="(prefers-color-scheme: dark)" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Raila — ML engineer" />
+    <meta
+      property="og:description"
+      content="Driven, Curious and Creative. Work, influences and writing on reasoning, alignment and multimodality."
+    />
+    <meta name="twitter:card" content="summary" />
+
+    <!--
+      Apply the stored theme before first paint so a dark-theme visitor never
+      sees a flash of the light paper background. useTheme owns it after mount.
+    -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('raila-theme');
+          var dark =
+            stored === 'dark' ||
+            (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (dark) document.documentElement.classList.add('dark');
+          document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
+          document.documentElement.style.backgroundColor = dark ? '#131211' : '#f7f6f3';
+        } catch (e) {
+          /* storage unavailable — the stylesheet default (light) applies */
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-MtGDXCa2.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-C9ZettZ_.css">
   </head>
   <body>
     <div id="root"></div>

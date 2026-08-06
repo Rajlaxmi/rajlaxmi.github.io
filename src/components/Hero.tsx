@@ -1,61 +1,60 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowDown } from 'lucide-react';
 
-const Hero: React.FC = () => {
-  const scrollToAbout = () => {
-    const element = document.getElementById('about');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  return (
-    <section id="hero" className="min-h-screen flex items-center justify-center bg-stone-50 relative overflow-hidden">
-      {/* Geometric Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 border border-stone-200 rounded-full opacity-30"></div>
-        <div className="absolute top-1/3 right-1/3 w-32 h-32 border border-stone-300 rounded-full opacity-20"></div>
-        <div className="absolute bottom-1/4 left-1/2 w-48 h-48 border border-stone-200 rounded-full opacity-25"></div>
-      </div>
-
-      <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
-        <div className="mb-8">
-          <h1 className="text-5xl md:text-7xl font-light tracking-widest text-stone-800 mb-4">
-            RAILA
+const Hero: React.FC = () => (
+  <section id="hero" className="mx-auto max-w-page px-6 sm:px-10">
+    <div className="flex min-h-[88vh] flex-col justify-center pb-20 pt-32 sm:pt-40">
+      <div className="grid gap-14 lg:grid-cols-[minmax(0,1fr)_18rem] lg:gap-20">
+        <div>
+          <h1 className="text-display" data-reveal>
+            raila
           </h1>
-          <div className="h-px w-24 bg-stone-400 mx-auto mb-6"></div>
-          <h2 className="text-xl md:text-2xl font-light italic text-stone-600 mb-8">
-            Driven, Curious and Creative.
-          </h2>
-        </div>
 
-        {/* Centered Geometric Element */}
-        <div className="flex items-center justify-center mb-12">
-          <div className="relative">
-            <div className="w-24 h-24 border-2 border-stone-400 rounded-full"></div>
-            <div className="absolute top-4 left-4 w-16 h-16 border border-stone-300 rounded-full"></div>
-            <div className="absolute top-8 left-8 w-8 h-8 bg-stone-300 rounded-full opacity-50"></div>
+          <p
+            className="mt-6 max-w-measure text-[1.35rem] italic text-muted sm:text-[1.6rem]"
+            data-reveal
+            style={{ '--reveal-delay': '120ms' } as React.CSSProperties}
+          >
+            Driven, Curious and Creative.
+          </p>
+
+          <div
+            className="mt-14"
+            data-reveal
+            style={{ '--reveal-delay': '360ms' } as React.CSSProperties}
+          >
+            <Link
+              to="/#about"
+              className="group inline-flex items-center gap-3 text-muted transition-colors duration-300 hover:text-accent"
+            >
+              <span className="eyebrow">explore work</span>
+              <ArrowDown
+                size={14}
+                strokeWidth={1.5}
+                className="transition-transform duration-500 ease-editorial group-hover:translate-y-1"
+              />
+            </Link>
           </div>
         </div>
 
-        <p className="text-lg md:text-xl text-stone-600 font-light leading-relaxed max-w-2xl mx-auto mb-2">
-        Once a computer achieves a human level, it will necessarily soar past it.
-        </p>
-
-        <p className="text-sm text-stone-600 font-light leading-relaxed max-w-2xl mx-auto mb-4 italic">
-        Ray Kurzweil, The Singularity Is Near (2005)
-        </p>
-
-        <button
-          onClick={scrollToAbout}
-          className="inline-flex items-center space-x-2 text-stone-600 hover:text-stone-800 transition-colors group"
+        {/* Set as a marginal note: the quote frames the work without competing
+            with the name for attention. */}
+        <figure
+          className="border-t border-rule pt-6 lg:mt-4 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0"
+          data-reveal
+          style={{ '--reveal-delay': '240ms' } as React.CSSProperties}
         >
-          <span className="text-sm font-light tracking-wide">Explore Work</span>
-          <ArrowDown size={16} className="group-hover:translate-y-1 transition-transform" />
-        </button>
+          <blockquote className="text-[1.15rem] leading-relaxed text-ink">
+            “Once a computer achieves a human level, it will necessarily soar past it.”
+          </blockquote>
+          <figcaption className="mt-4 text-[0.95rem] italic text-muted">
+            Ray Kurzweil, <cite className="not-italic">The Singularity Is Near</cite> (2005)
+          </figcaption>
+        </figure>
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default Hero;
