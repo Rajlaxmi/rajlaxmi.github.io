@@ -152,7 +152,7 @@
    --------------------------------------------------------------------------- */
 .prose {
   @apply text-ink;
-  font-size: 1.130246rem;
+  font-size: 1.243271rem;
   line-height: 1.7;
 }
 
@@ -162,7 +162,7 @@
 
 .prose h2 {
   @apply font-normal text-ink;
-  font-size: 1.695368rem;
+  font-size: 1.864905rem;
   line-height: 1.3;
   letter-spacing: -0.01em;
   margin-top: 2.75em;
@@ -171,7 +171,7 @@
 
 .prose h3 {
   @apply font-normal text-ink;
-  font-size: 1.31862rem;
+  font-size: 1.450482rem;
   line-height: 1.35;
   margin-top: 2.25em;
   margin-bottom: 0;
@@ -198,7 +198,7 @@
   border-color: rgb(var(--accent) / 0.5);
   padding-left: 1.5rem;
   font-style: italic;
-  font-size: 1.193038rem;
+  font-size: 1.312342rem;
   margin-top: 2em;
   margin-bottom: 2em;
 }
@@ -250,7 +250,7 @@
 
 .prose ol > li::marker {
   @apply text-faint;
-  font-size: 1.130246em;
+  font-size: 1.243271em;
 }
 
 .prose li + li {
@@ -265,7 +265,7 @@
   @apply bg-surface font-mono text-accent;
   padding: 0.1em 0.35em;
   border-radius: 3px;
-  font-size: 1.067454em;
+  font-size: 1.174199em;
 }
 
 .prose pre {
@@ -277,7 +277,7 @@
 
 .prose pre code {
   @apply bg-transparent p-0 text-ink;
-  font-size: 1.067454rem;
+  font-size: 1.174199rem;
 }
 
 .prose img {
@@ -291,7 +291,7 @@
 
 .prose figure figcaption {
   @apply text-center text-muted;
-  font-size: 0.941871rem;
+  font-size: 1.036058rem;
   font-style: italic;
   margin-top: 0.9em;
 }
@@ -304,13 +304,13 @@
 .prose table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 1.004663rem;
+  font-size: 1.105129rem;
 }
 
 .prose thead th {
   @apply border-b border-rule text-left font-normal text-faint;
   font-family: theme('fontFamily.mono');
-  font-size: 0.784893rem;
+  font-size: 0.863382rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   padding: 0 1rem 0.6rem 0;
