@@ -35,7 +35,7 @@ const featuredOrganizations: Organization[] = [
 const Influences: React.FC = () => (
   <Section
     id="influences"
-    index="03"
+    index="04"
     label="influences"
     lead="Organizations that have shaped my thinking and approach to creating meaningful, lasting work."
   >

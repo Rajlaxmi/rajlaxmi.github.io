@@ -6,8 +6,8 @@ import useTheme from '../hooks/useTheme';
 const NAV_ITEMS = [
   { id: 'about', label: 'about' },
   { id: 'blog', label: 'writing' },
-  { id: 'influences', label: 'influences' },
   { id: 'projects', label: 'projects' },
+  { id: 'influences', label: 'influences' },
   { id: 'misc', label: 'miscellaneous' },
   { id: 'contact', label: 'contact' },
 ];
