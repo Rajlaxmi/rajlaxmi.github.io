@@ -59,7 +59,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
         <div className="mx-auto flex max-w-page items-center justify-between px-6 py-4 sm:px-10">
           <Link
             to="/"
-            className="text-[0.917041rem] tracking-[0.02em] text-ink transition-colors duration-300 hover:text-accent"
+            className="text-[1.008745rem] tracking-[0.02em] text-ink transition-colors duration-300 hover:text-accent"
           >
             raila
           </Link>
@@ -74,7 +74,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
                       <Link
                         to={`/#${item.id}`}
                         aria-current={isActive ? 'true' : undefined}
-                        className={`text-[0.863097rem] transition-colors duration-300 hover:text-accent ${
+                        className={`text-[0.949407rem] transition-colors duration-300 hover:text-accent ${
                           isActive
                             ? 'text-ink underline decoration-accent decoration-1 underline-offset-[6px]'
                             : 'text-muted'
@@ -116,7 +116,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
                 <Link
                   to={`/#${item.id}`}
                   onClick={() => setIsMenuOpen(false)}
-                  className="block py-4 text-[1.213731rem] text-ink transition-colors duration-300 hover:text-accent"
+                  className="block py-4 text-[1.335104rem] text-ink transition-colors duration-300 hover:text-accent"
                 >
                   {item.label}
                 </Link>
