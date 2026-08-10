@@ -11,7 +11,7 @@ const skillCategories: SkillCategory[] = [
   {
     title: 'Reasoning',
     description: 'Building robust, scalable applications',
-    skills: ['LLMs', 'Reasoning', 'Alignment', 'Multimodality'],
+    skills: ['LLMs', 'Alignment', 'Multimodality'],
   },
   {
     title: 'Engineering',
