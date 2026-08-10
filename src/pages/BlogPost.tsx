@@ -50,7 +50,7 @@ const BlogPost: React.FC = () => {
             <h1 className="mt-5 text-title text-ink">{post.title}</h1>
 
             {post.excerpt && (
-              <p className="mt-6 text-[1.261837rem] italic leading-[1.5] text-muted">{post.excerpt}</p>
+              <p className="mt-6 text-[1.198745rem] italic leading-[1.5] text-muted">{post.excerpt}</p>
             )}
 
             {post.tags.length > 0 && (
@@ -81,7 +81,7 @@ const BlogPost: React.FC = () => {
                     <ArrowLeft size={12} strokeWidth={1.5} />
                     Newer
                   </p>
-                  <p className="text-[1.20175rem] text-ink transition-colors duration-300 group-hover:text-accent">
+                  <p className="text-[1.141663rem] text-ink transition-colors duration-300 group-hover:text-accent">
                     {newer.title}
                   </p>
                 </Link>
@@ -95,7 +95,7 @@ const BlogPost: React.FC = () => {
                     Older
                     <ArrowRight size={12} strokeWidth={1.5} />
                   </p>
-                  <p className="text-[1.20175rem] text-ink transition-colors duration-300 group-hover:text-accent">
+                  <p className="text-[1.141663rem] text-ink transition-colors duration-300 group-hover:text-accent">
                     {older.title}
                   </p>
                 </Link>
