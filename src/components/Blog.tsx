@@ -7,7 +7,7 @@ import { blogPosts, formatDate } from '../lib/posts';
 const Blog: React.FC = () => (
   <Section
     id="blog"
-    index="05"
+    index="02"
     label="writing"
     lead="Reflections on algorithms, reasoning and multimodality."
   >

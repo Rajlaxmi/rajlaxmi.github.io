@@ -39,7 +39,7 @@ const skillCategories: SkillCategory[] = [
 const Skills: React.FC = () => (
   <Section
     id="skills"
-    index="04"
+    index="05"
     label="skills"
     lead="A curated collection of tools and techniques refined through years of creative problem-solving."
   >

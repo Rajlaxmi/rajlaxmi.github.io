@@ -11,7 +11,7 @@ const isLive = (url?: string): url is string => Boolean(url) && url !== '#';
 const Projects: React.FC = () => (
   <Section
     id="projects"
-    index="03"
+    index="04"
     label="work"
     lead="Selected projects that demonstrate the intersection of thoughtful design and technical excellence."
   >

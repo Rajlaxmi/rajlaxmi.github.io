@@ -5,10 +5,10 @@ import useTheme from '../hooks/useTheme';
 
 const NAV_ITEMS = [
   { id: 'about', label: 'about' },
+  { id: 'blog', label: 'writing' },
   { id: 'influences', label: 'influences' },
   { id: 'projects', label: 'projects' },
   { id: 'skills', label: 'skills' },
-  { id: 'blog', label: 'writing' },
   { id: 'contact', label: 'contact' },
 ];
 

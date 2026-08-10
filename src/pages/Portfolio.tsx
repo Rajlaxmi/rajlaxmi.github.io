@@ -13,7 +13,7 @@ import useActiveSection from '../hooks/useActiveSection';
 import useReveal from '../hooks/useReveal';
 
 // Module scope keeps the reference stable across renders for useActiveSection.
-const SECTION_IDS = ['hero', 'about', 'influences', 'projects', 'skills', 'blog', 'contact'];
+const SECTION_IDS = ['hero', 'about', 'blog', 'influences', 'projects', 'skills', 'contact'];
 
 const Portfolio: React.FC = () => {
   const activeSection = useActiveSection(SECTION_IDS);
@@ -26,10 +26,10 @@ const Portfolio: React.FC = () => {
         <Hero />
         <BackgroundVideo />
         <About />
+        <Blog />
         <Influences />
         <Projects />
         <Skills />
-        <Blog />
         <Contact />
       </main>
       <Footer />
