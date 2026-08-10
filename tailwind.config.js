@@ -35,9 +35,9 @@ export default {
       },
       fontSize: {
         // Display sizes tuned for the serif's small x-height.
-        display: ['clamp(2.25rem, 6.3vw, 3.6rem)', { lineHeight: '0.95', letterSpacing: '-0.02em' }],
-        title: ['clamp(1.45rem, 3.15vw, 2rem)', { lineHeight: '1.1', letterSpacing: '-0.015em' }],
-        label: ['0.625rem', { lineHeight: '1', letterSpacing: '0.18em' }],
+        display: ['clamp(2.475rem, 6.93vw, 3.96rem)', { lineHeight: '0.95', letterSpacing: '-0.02em' }],
+        title: ['clamp(1.595rem, 3.465vw, 2.2rem)', { lineHeight: '1.1', letterSpacing: '-0.015em' }],
+        label: ['0.6875rem', { lineHeight: '1', letterSpacing: '0.18em' }],
       },
       maxWidth: {
         measure: '34rem',
