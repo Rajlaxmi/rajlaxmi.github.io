@@ -9,7 +9,7 @@ const About: React.FC = () => (
     label="about"
     lead="I am an ML engineer on the applied machine learning teams at Google. My research interests include applying LLMs to reasoning and mathematics, alignment, and multimodality."
   >
-    <p className="mt-8 max-w-measure text-muted" data-reveal>
+    <p className="mt-8 max-w-measure text-[1.019533rem] text-muted" data-reveal>
       I am driven by my curiosity and learning from the collective stream of consciousness of past
       and present intellectuals. My other interests include Botany, Medical sciences, Human body,
       History art and architecture, Political and governance structures around the world.
