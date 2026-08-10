@@ -46,7 +46,9 @@ const Influences: React.FC = () => (
             <h3 className="text-[1.186759rem] text-ink">{org.name}</h3>
             <span className="eyebrow">{org.category}</span>
           </div>
-          <p className="mt-2 max-w-measure text-[1.068082rem] text-muted">{org.description}</p>
+          <p className="mt-2 max-w-none text-[1.068082rem] text-muted sm:whitespace-nowrap">
+            {org.description}
+          </p>
         </li>
       ))}
     </ul>
