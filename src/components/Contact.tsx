@@ -36,7 +36,7 @@ const Contact: React.FC = () => (
             className="group flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 border-b border-rule py-5"
           >
             <span className="eyebrow">{link.label}</span>
-            <span className="flex items-center gap-2 text-[1.20175rem] text-ink transition-colors duration-300 group-hover:text-accent">
+            <span className="flex items-center gap-2 text-[1.141663rem] text-ink transition-colors duration-300 group-hover:text-accent">
               {link.value}
               <ArrowUpRight
                 size={14}

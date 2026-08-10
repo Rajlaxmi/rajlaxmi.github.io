@@ -16,7 +16,7 @@ const Blog: React.FC = () => (
         <li key={post.slug} data-reveal>
           <Link to={`/blog/${post.slug}`} className="group block border-b border-rule py-7">
             <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
-              <h3 className="text-[1.32825rem] text-ink transition-colors duration-300 group-hover:text-accent">
+              <h3 className="text-[1.261837rem] text-ink transition-colors duration-300 group-hover:text-accent">
                 {post.title}
               </h3>
               <p className="eyebrow shrink-0">
@@ -26,7 +26,7 @@ const Blog: React.FC = () => (
 
             <p className="mt-2 max-w-measure text-muted">{post.excerpt}</p>
 
-            <p className="mt-4 flex items-center gap-2 text-[0.94875rem] text-faint transition-colors duration-300 group-hover:text-accent">
+            <p className="mt-4 flex items-center gap-2 text-[0.901312rem] text-faint transition-colors duration-300 group-hover:text-accent">
               <span>{post.readTime}</span>
               <ArrowRight
                 size={13}
