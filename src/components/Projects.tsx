@@ -1,5 +1,6 @@
 import React from 'react';
-import { ArrowUpRight, Github } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowRight, ArrowUpRight, Github } from 'lucide-react';
 import Section from './Section';
 import LoopingVideo from './LoopingVideo';
 import { projects } from '../content/projects';
@@ -50,7 +51,7 @@ const Projects: React.FC = () => (
 
           <div>
             <p className="eyebrow mb-3">{String(index + 1).padStart(2, '0')}</p>
-            <h3 className="text-[1.6rem] leading-tight text-ink sm:text-[1.85rem]">
+            <h3 className="text-[1.2rem] leading-tight text-ink sm:text-[1.35rem]">
               {project.title}
             </h3>
             <p className="mt-3 max-w-measure text-muted">{project.description}</p>
@@ -70,7 +71,7 @@ const Projects: React.FC = () => (
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="link inline-flex items-center gap-1.5 text-[0.95rem]"
+                    className="link inline-flex items-center gap-1.5 text-[0.8rem]"
                   >
                     Live demo
                     <ArrowUpRight size={13} strokeWidth={1.5} />
@@ -81,7 +82,7 @@ const Projects: React.FC = () => (
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="link inline-flex items-center gap-1.5 text-[0.95rem]"
+                    className="link inline-flex items-center gap-1.5 text-[0.8rem]"
                   >
                     <Github size={13} strokeWidth={1.5} />
                     Code
@@ -93,6 +94,20 @@ const Projects: React.FC = () => (
         </li>
       ))}
     </ol>
+
+    <p className="mt-10" data-reveal>
+      <Link
+        to="/projects"
+        className="group inline-flex items-center gap-3 text-muted transition-colors duration-300 hover:text-accent"
+      >
+        <span className="eyebrow">all projects</span>
+        <ArrowRight
+          size={14}
+          strokeWidth={1.5}
+          className="transition-transform duration-500 ease-editorial group-hover:translate-x-1"
+        />
+      </Link>
+    </p>
   </Section>
 );
 

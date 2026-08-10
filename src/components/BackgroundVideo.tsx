@@ -1,7 +1,7 @@
 import React from 'react';
 import LoopingVideo from './LoopingVideo';
 
-const FADE = 'linear-gradient(to bottom, transparent, black 26%, black 64%, transparent)';
+const FADE = 'linear-gradient(to bottom, transparent, black 12%, black 88%, transparent)';
 
 /**
  * A full-bleed interlude between the hero and the writing. The clip is masked
@@ -11,7 +11,7 @@ const FADE = 'linear-gradient(to bottom, transparent, black 26%, black 64%, tran
 const BackgroundVideo: React.FC = () => (
   <section aria-hidden="true" className="overflow-hidden">
     <div
-      className="h-[52vh] min-h-[280px] w-full sm:h-[64vh]"
+      className="h-[65vh] min-h-[340px] w-full sm:h-[80vh]"
       style={{ maskImage: FADE, WebkitMaskImage: FADE }}
     >
       <LoopingVideo

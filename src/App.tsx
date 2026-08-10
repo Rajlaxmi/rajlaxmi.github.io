@@ -3,6 +3,8 @@ import { Link, Navigate, Route, Routes } from 'react-router-dom';
 import Portfolio from './pages/Portfolio';
 import BlogPost from './pages/BlogPost';
 import InfluencesPage from './pages/Influences';
+import ProjectsPage from './pages/Projects';
+import WritingPage from './pages/Writing';
 import ScrollToTop from './components/ScrollToTop';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -55,6 +57,8 @@ function App() {
         <Route path="/blog" element={<Navigate to="/#blog" replace />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/influences" element={<InfluencesPage />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/writing" element={<WritingPage />} />
         <Route path="/resume" element={<ResumeRedirect />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

@@ -13,8 +13,8 @@
     --paper: 247 246 243;
     --surface: 240 238 233;
     --ink: 26 25 23;
-    --muted: 107 104 98;
-    --faint: 148 144 136;
+    --muted: 90 87 81;
+    --faint: 124 120 112;
     --rule: 223 219 211;
     --accent: 154 79 46;
   }
@@ -23,8 +23,8 @@
     --paper: 19 18 17;
     --surface: 28 26 24;
     --ink: 232 229 223;
-    --muted: 154 149 140;
-    --faint: 122 117 109;
+    --muted: 168 163 154;
+    --faint: 140 135 126;
     --rule: 46 43 39;
     --accent: 201 120 79;
   }
@@ -36,10 +36,11 @@
 
   body {
     @apply bg-paper font-serif text-ink antialiased;
-    font-size: 18px;
-    line-height: 1.65;
+    font-size: 14.4px;
+    line-height: 1.55;
     font-variant-numeric: oldstyle-nums;
     text-rendering: optimizeLegibility;
+    -webkit-text-stroke: 0.135px currentColor;
   }
 
   /* Anchor targets clear the fixed header. */
@@ -151,8 +152,8 @@
    --------------------------------------------------------------------------- */
 .prose {
   @apply text-ink;
-  font-size: 1.125rem;
-  line-height: 1.75;
+  font-size: 0.9rem;
+  line-height: 1.7;
 }
 
 .prose > * + * {
@@ -161,8 +162,8 @@
 
 .prose h2 {
   @apply font-normal text-ink;
-  font-size: 1.75rem;
-  line-height: 1.25;
+  font-size: 1.35rem;
+  line-height: 1.3;
   letter-spacing: -0.01em;
   margin-top: 2.75em;
   margin-bottom: 0;
@@ -170,8 +171,8 @@
 
 .prose h3 {
   @apply font-normal text-ink;
-  font-size: 1.35rem;
-  line-height: 1.3;
+  font-size: 1.05rem;
+  line-height: 1.35;
   margin-top: 2.25em;
   margin-bottom: 0;
 }
@@ -197,7 +198,7 @@
   border-color: rgb(var(--accent) / 0.5);
   padding-left: 1.5rem;
   font-style: italic;
-  font-size: 1.2rem;
+  font-size: 0.95rem;
   margin-top: 2em;
   margin-bottom: 2em;
 }
@@ -290,7 +291,7 @@
 
 .prose figure figcaption {
   @apply text-center text-muted;
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   font-style: italic;
   margin-top: 0.9em;
 }
@@ -303,13 +304,13 @@
 .prose table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.95rem;
+  font-size: 0.8rem;
 }
 
 .prose thead th {
   @apply border-b border-rule text-left font-normal text-faint;
   font-family: theme('fontFamily.mono');
-  font-size: 0.6875rem;
+  font-size: 0.625rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   padding: 0 1rem 0.6rem 0;

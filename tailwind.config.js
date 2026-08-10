@@ -14,7 +14,15 @@ export default {
         accent: 'rgb(var(--accent) / <alpha-value>)',
       },
       fontFamily: {
-        serif: ['"EB Garamond Variable"', '"EB Garamond"', 'Georgia', 'Cambria', 'serif'],
+        serif: [
+          '"Iowan Old Style"',
+          'Palatino',
+          '"Palatino Linotype"',
+          '"Book Antiqua"',
+          'Georgia',
+          'Cambria',
+          'serif',
+        ],
         mono: [
           'ui-monospace',
           'SFMono-Regular',
@@ -26,10 +34,10 @@ export default {
         ],
       },
       fontSize: {
-        // Display sizes tuned for EB Garamond's small x-height.
-        display: ['clamp(3.25rem, 11vw, 7rem)', { lineHeight: '0.92', letterSpacing: '-0.02em' }],
-        title: ['clamp(2rem, 5vw, 3rem)', { lineHeight: '1.05', letterSpacing: '-0.015em' }],
-        label: ['0.6875rem', { lineHeight: '1', letterSpacing: '0.18em' }],
+        // Display sizes tuned for the serif's small x-height.
+        display: ['clamp(2.25rem, 6.3vw, 3.6rem)', { lineHeight: '0.95', letterSpacing: '-0.02em' }],
+        title: ['clamp(1.45rem, 3.15vw, 2rem)', { lineHeight: '1.1', letterSpacing: '-0.015em' }],
+        label: ['0.625rem', { lineHeight: '1', letterSpacing: '0.18em' }],
       },
       maxWidth: {
         measure: '34rem',

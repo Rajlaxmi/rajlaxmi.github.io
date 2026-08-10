@@ -16,7 +16,7 @@ const About: React.FC = () => (
     </p>
 
     <blockquote
-      className="mt-12 max-w-measure border-l border-accent/50 pl-6 text-[1.15rem] italic text-ink"
+      className="mt-12 max-w-measure border-l border-accent/50 pl-6 text-[0.95rem] italic text-ink"
       data-reveal
     >
       Lux mentis, Lux orbis. Light of the mind, light of the world.
