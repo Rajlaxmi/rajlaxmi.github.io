@@ -38,7 +38,7 @@ const miscItems: MiscItem[] = [
 const Miscellaneous: React.FC = () => (
   <Section
     id="misc"
-    index="06"
+    index="05"
     label="miscellaneous"
     lead="Pursuits that live alongside the work."
   >

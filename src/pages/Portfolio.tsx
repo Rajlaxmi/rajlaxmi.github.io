@@ -5,7 +5,6 @@ import BackgroundVideo from '../components/BackgroundVideo';
 import About from '../components/About';
 import Miscellaneous from '../components/Miscellaneous';
 import Influences from '../components/Influences';
-import Skills from '../components/Skills';
 import Projects from '../components/Projects';
 import Blog from '../components/Blog';
 import Contact from '../components/Contact';
@@ -14,7 +13,7 @@ import useActiveSection from '../hooks/useActiveSection';
 import useReveal from '../hooks/useReveal';
 
 // Module scope keeps the reference stable across renders for useActiveSection.
-const SECTION_IDS = ['hero', 'about', 'blog', 'influences', 'projects', 'skills', 'misc', 'contact'];
+const SECTION_IDS = ['hero', 'about', 'blog', 'influences', 'projects', 'misc', 'contact'];
 
 const Portfolio: React.FC = () => {
   const activeSection = useActiveSection(SECTION_IDS);
@@ -30,7 +29,6 @@ const Portfolio: React.FC = () => {
         <Blog />
         <Influences />
         <Projects />
-        <Skills />
         <Miscellaneous />
         <Contact />
       </main>

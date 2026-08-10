@@ -23,7 +23,7 @@ const contactLinks: ContactLink[] = [
 const Contact: React.FC = () => (
   <Section
     id="contact"
-    index="07"
+    index="06"
     label="contact"
     lead="Whether you're looking to discuss ideas, collaborate on a project or simply say hello, I'd love to hear from you. Every great creation begins with a conversation."
   >
