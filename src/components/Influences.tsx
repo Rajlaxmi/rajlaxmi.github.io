@@ -43,10 +43,10 @@ const Influences: React.FC = () => (
       {featuredOrganizations.map((org) => (
         <li key={org.name} className="border-b border-rule py-6" data-reveal>
           <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
-            <h3 className="text-[1.078872rem] text-ink">{org.name}</h3>
+            <h3 className="text-[1.186759rem] text-ink">{org.name}</h3>
             <span className="eyebrow">{org.category}</span>
           </div>
-          <p className="mt-2 max-w-measure text-muted">{org.description}</p>
+          <p className="mt-2 max-w-measure text-[1.068082rem] text-muted">{org.description}</p>
         </li>
       ))}
     </ul>
