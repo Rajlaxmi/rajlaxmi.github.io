@@ -51,7 +51,7 @@ const Projects: React.FC = () => (
 
           <div>
             <p className="eyebrow mb-3">{String(index + 1).padStart(2, '0')}</p>
-            <h3 className="text-[1.369995rem] leading-tight text-ink sm:text-[1.541244rem]">
+            <h3 className="text-[1.232996rem] leading-tight text-ink sm:text-[1.38712rem]">
               {project.title}
             </h3>
             <p className="mt-3 max-w-measure text-muted">{project.description}</p>
@@ -71,7 +71,7 @@ const Projects: React.FC = () => (
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="link inline-flex items-center gap-1.5 text-[0.91333rem]"
+                    className="link inline-flex items-center gap-1.5 text-[0.821997rem]"
                   >
                     Live demo
                     <ArrowUpRight size={13} strokeWidth={1.5} />
@@ -82,7 +82,7 @@ const Projects: React.FC = () => (
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="link inline-flex items-center gap-1.5 text-[0.91333rem]"
+                    className="link inline-flex items-center gap-1.5 text-[0.821997rem]"
                   >
                     <Github size={13} strokeWidth={1.5} />
                     Code

@@ -12,7 +12,7 @@ const Hero: React.FC = () => (
           </h1>
 
           <p
-            className="mt-6 max-w-measure text-[1.198745rem] italic text-muted sm:text-[1.369995rem]"
+            className="mt-6 max-w-measure text-[1.078871rem] italic text-muted sm:text-[1.232996rem]"
             data-reveal
             style={{ '--reveal-delay': '120ms' } as React.CSSProperties}
           >
@@ -45,10 +45,10 @@ const Hero: React.FC = () => (
           data-reveal
           style={{ '--reveal-delay': '240ms' } as React.CSSProperties}
         >
-          <blockquote className="text-[1.08458rem] leading-relaxed text-ink">
+          <blockquote className="text-[0.976122rem] leading-relaxed text-ink">
             “Once a computer achieves a human level, it will necessarily soar past it.”
           </blockquote>
-          <figcaption className="mt-4 text-[0.91333rem] italic text-muted">
+          <figcaption className="mt-4 text-[0.821997rem] italic text-muted">
             Ray Kurzweil, <cite className="not-italic">The Singularity Is Near</cite> (2005)
           </figcaption>
         </figure>
