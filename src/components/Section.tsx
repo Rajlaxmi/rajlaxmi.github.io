@@ -31,7 +31,7 @@ const Section: React.FC<SectionProps> = ({ id, label, index, lead, children, cla
         <div className="min-w-0">
           {lead && (
             <p
-              className="max-w-[38rem] text-[1.21rem] leading-[1.5] text-ink sm:text-[1.32rem]"
+              className="max-w-[38rem] text-[1.3915rem] leading-[1.5] text-ink sm:text-[1.518rem]"
               data-reveal
             >
               {lead}

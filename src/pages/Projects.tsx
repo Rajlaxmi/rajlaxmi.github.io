@@ -26,7 +26,7 @@ const ProjectsPage: React.FC = () => {
         <div className="mx-auto max-w-page px-6 pb-16 pt-32 sm:px-10 sm:pt-40">
           <p className="eyebrow">index</p>
           <h1 className="mt-5 text-title text-ink">Projects</h1>
-          <p className="mt-6 max-w-[38rem] text-[1.1rem] leading-[1.55] text-muted">
+          <p className="mt-6 max-w-[38rem] text-[1.265rem] leading-[1.55] text-muted">
             Selected projects that demonstrate the intersection of thoughtful design and
             technical excellence.
           </p>
@@ -69,7 +69,7 @@ const ProjectsPage: React.FC = () => {
 
                 <div>
                   <p className="eyebrow mb-3">{String(index + 1).padStart(2, '0')}</p>
-                  <h3 className="text-[1.32rem] leading-tight text-ink sm:text-[1.485rem]">
+                  <h3 className="text-[1.518rem] leading-tight text-ink sm:text-[1.70775rem]">
                     {project.title}
                   </h3>
                   <p className="mt-3 max-w-measure text-muted">{project.description}</p>
@@ -89,7 +89,7 @@ const ProjectsPage: React.FC = () => {
                           href={project.liveUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="link inline-flex items-center gap-1.5 text-[0.88rem]"
+                          className="link inline-flex items-center gap-1.5 text-[1.012rem]"
                         >
                           Live demo
                           <ArrowUpRight size={13} strokeWidth={1.5} />
@@ -100,7 +100,7 @@ const ProjectsPage: React.FC = () => {
                           href={project.githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="link inline-flex items-center gap-1.5 text-[0.88rem]"
+                          className="link inline-flex items-center gap-1.5 text-[1.012rem]"
                         >
                           <Github size={13} strokeWidth={1.5} />
                           Code
