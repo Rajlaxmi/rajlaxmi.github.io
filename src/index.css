@@ -5,8 +5,8 @@
 /* ---------------------------------------------------------------------------
    Design tokens
 
-   Warm paper light theme / warm near-black dark theme. Values are raw RGB
-   channels so Tailwind's `<alpha-value>` syntax works (see tailwind.config.js).
+   Warm paper light theme. Values are raw RGB channels so Tailwind's
+   `<alpha-value>` syntax works (see tailwind.config.js).
    --------------------------------------------------------------------------- */
 @layer base {
   :root {
@@ -17,16 +17,6 @@
     --faint: 124 120 112;
     --rule: 223 219 211;
     --accent: 154 79 46;
-  }
-
-  .dark {
-    --paper: 19 18 17;
-    --surface: 28 26 24;
-    --ink: 232 229 223;
-    --muted: 168 163 154;
-    --faint: 140 135 126;
-    --rule: 46 43 39;
-    --accent: 201 120 79;
   }
 
   html {
@@ -107,8 +97,8 @@
    Scroll reveal
 
    Elements start hidden and are unhidden by useReveal's IntersectionObserver,
-   which sets data-revealed. The `no-motion` class (set when the user prefers
-   reduced motion) opts everything out.
+   which sets data-revealed. useReveal reveals everything immediately for
+   visitors who prefer reduced motion, so no separate opt-out class is needed.
    --------------------------------------------------------------------------- */
 [data-reveal] {
   opacity: 0;
@@ -121,13 +111,6 @@
 [data-reveal][data-revealed='true'] {
   opacity: 1;
   transform: none;
-}
-
-.no-motion [data-reveal],
-.no-motion [data-reveal][data-revealed='true'] {
-  opacity: 1;
-  transform: none;
-  transition: none;
 }
 
 @media (prefers-reduced-motion: reduce) {

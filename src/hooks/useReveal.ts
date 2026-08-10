@@ -5,8 +5,8 @@ import { useEffect } from 'react';
  *
  * Rather than wrapping every block in a component, this observes any element
  * carrying a `data-reveal` attribute and flips `data-revealed` on it once.
- * The transition itself lives in index.css, and `.no-motion` on <html> (set by
- * useTheme when the user prefers reduced motion) short-circuits it entirely.
+ * The transition itself lives in index.css; visitors who prefer reduced
+ * motion get every element revealed immediately instead.
  */
 const useReveal = (): void => {
   useEffect(() => {

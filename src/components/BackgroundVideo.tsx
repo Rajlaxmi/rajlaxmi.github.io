@@ -16,7 +16,7 @@ const BackgroundVideo: React.FC = () => (
     >
       <LoopingVideo
         src="/intelligence.mp4"
-        className="h-full w-full object-cover opacity-80 contrast-[1.05] saturate-[0.55] dark:opacity-60"
+        className="h-full w-full object-cover opacity-80 contrast-[1.05] saturate-[0.55]"
       />
     </div>
   </section>

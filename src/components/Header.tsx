@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import ThemeToggle from './ThemeToggle';
-import useTheme from '../hooks/useTheme';
 
 const NAV_ITEMS = [
   { id: 'about', label: 'about' },
@@ -20,7 +18,6 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ activeSection }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 24);
@@ -87,8 +84,6 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
                 })}
               </ul>
             </nav>
-
-            <ThemeToggle theme={theme} onToggle={toggleTheme} />
 
             <button
               type="button"

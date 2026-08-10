@@ -1,5 +1,4 @@
 import React from 'react';
-import { ArrowUpRight } from 'lucide-react';
 import Section from './Section';
 
 const About: React.FC = () => (
@@ -21,22 +20,6 @@ const About: React.FC = () => (
     >
       Lux mentis, Lux orbis. Light of the mind, light of the world.
     </blockquote>
-
-    <p className="mt-12" data-reveal>
-      <a
-        href="/RajlaxmiResume.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group inline-flex items-center gap-2 text-muted transition-colors duration-300 hover:text-accent"
-      >
-        <span className="eyebrow">résumé</span>
-        <ArrowUpRight
-          size={13}
-          strokeWidth={1.5}
-          className="transition-transform duration-500 ease-editorial group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-        />
-      </a>
-    </p>
   </Section>
 );
 
