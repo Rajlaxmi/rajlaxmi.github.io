@@ -2,12 +2,16 @@ import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import Section from './Section';
 
+interface MiscLink {
+  label: string;
+  href: string;
+}
+
 interface MiscItem {
   name: string;
   description: string;
   category: string;
-  href: string;
-  linkLabel: string;
+  links: MiscLink[];
   image: string;
 }
 
@@ -16,16 +20,17 @@ const miscItems: MiscItem[] = [
     name: 'Women in Frontier AI',
     description: 'A community supporting women working in frontier AI research and engineering.',
     category: 'Founder',
-    href: 'https://www.linkedin.com/company/the-curie-ai-society/',
-    linkLabel: 'LinkedIn',
+    links: [{ label: 'LinkedIn', href: 'https://www.linkedin.com/company/women-in-frontier-ai/' }],
     image: '/women-in-frontier-ai-agi-house.jpg',
   },
   {
     name: 'Photography',
-    description: 'A few frames from evenings spent watching the sky change.',
+    description: 'Nature and geography aficionado, capturing the best landscapes and light.',
     category: 'Hobby',
-    href: 'https://raila83.mypixieset.com/',
-    linkLabel: 'Gallery',
+    links: [
+      { label: 'Gallery', href: 'https://raila83.mypixieset.com/' },
+      { label: 'Instagram', href: 'https://www.instagram.com/raila.snapshots/' },
+    ],
     image: '/photography-rainbow.jpg',
   },
 ];
@@ -41,7 +46,9 @@ const Miscellaneous: React.FC = () => (
       {miscItems.map((item, index) => (
         <li
           key={item.name}
-          className="grid items-center gap-8 md:grid-cols-2 md:gap-12"
+          className={`grid items-center gap-8 md:gap-12 ${
+            index % 2 === 1 ? 'md:grid-cols-[2fr_3fr]' : 'md:grid-cols-[3fr_2fr]'
+          }`}
           data-reveal
         >
           <div
@@ -49,7 +56,7 @@ const Miscellaneous: React.FC = () => (
               index % 2 === 1 ? 'md:order-2' : ''
             }`}
           >
-            <div className="aspect-video">
+            <div className="aspect-[4/3]">
               <img
                 src={item.image}
                 alt=""
@@ -71,15 +78,18 @@ const Miscellaneous: React.FC = () => (
             </ul>
 
             <div className="mt-6 flex flex-wrap items-center gap-6">
-              <a
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link inline-flex items-center gap-1.5 text-[0.863097rem]"
-              >
-                {item.linkLabel}
-                <ArrowUpRight size={13} strokeWidth={1.5} />
-              </a>
+              {item.links.map((linkItem) => (
+                <a
+                  key={linkItem.label}
+                  href={linkItem.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link inline-flex items-center gap-1.5 text-[0.863097rem]"
+                >
+                  {linkItem.label}
+                  <ArrowUpRight size={13} strokeWidth={1.5} />
+                </a>
+              ))}
             </div>
           </div>
         </li>
