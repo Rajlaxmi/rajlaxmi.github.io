@@ -42,7 +42,7 @@ const BlogPost: React.FC = () => {
 
       <main>
         <article className="mx-auto max-w-page px-6 pb-24 pt-32 sm:px-10 sm:pt-40">
-          <header className="mx-auto max-w-[42rem]">
+          <header className="mx-auto max-w-[48rem]">
             <p className="eyebrow">
               {post.category} · {formatDate(post.date)} · {post.readTime}
             </p>
@@ -66,7 +66,7 @@ const BlogPost: React.FC = () => {
             <hr className="mt-10 border-rule" />
           </header>
 
-          <div className="mx-auto mt-12 max-w-[42rem]">
+          <div className="mx-auto mt-12 max-w-[48rem]">
             <Prose>{post.content}</Prose>
           </div>
         </article>
