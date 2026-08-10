@@ -46,12 +46,12 @@ const Skills: React.FC = () => (
     <div className="mt-14 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
       {skillCategories.map((category) => (
         <div key={category.title} className="border-t border-rule pt-5" data-reveal>
-          <h3 className="text-[1.027497rem] text-ink">{category.title}</h3>
-          <p className="mt-1 text-[0.821997rem] italic text-muted">{category.description}</p>
+          <h3 className="text-[1.078872rem] text-ink">{category.title}</h3>
+          <p className="mt-1 text-[0.863097rem] italic text-muted">{category.description}</p>
 
           <ul className="mt-5 space-y-1.5">
             {category.skills.map((skill) => (
-              <li key={skill} className="text-[0.821997rem] text-muted">
+              <li key={skill} className="text-[0.863097rem] text-muted">
                 {skill}
               </li>
             ))}
