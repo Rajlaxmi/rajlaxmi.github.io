@@ -13,8 +13,8 @@ const contactLinks: ContactLink[] = [
   { label: 'Email', value: 'rajlaxmisah@example.com', href: 'mailto:rajlaxmisah@example.com' },
   {
     label: 'LinkedIn',
-    value: 'in/rajlaxmisah',
-    href: 'https://www.linkedin.com/in/rajlaxmisah',
+    value: 'in/railasan',
+    href: 'https://www.linkedin.com/in/railasan',
     external: true,
   },
   { label: 'Twitter', value: '@raila_san', href: 'https://x.com/raila_san', external: true },
