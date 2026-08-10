@@ -40,7 +40,7 @@ const Miscellaneous: React.FC = () => (
     id="misc"
     index="06"
     label="miscellaneous"
-    lead="Other things I've started or been part of, outside the usual work."
+    lead="Pursuits that live alongside the work."
   >
     <ol className="mt-14 space-y-16 sm:space-y-24">
       {miscItems.map((item, index) => (
