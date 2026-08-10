@@ -45,7 +45,7 @@ const Hero: React.FC = () => (
           data-reveal
           style={{ '--reveal-delay': '240ms' } as React.CSSProperties}
         >
-          <blockquote className="text-[1.024928rem] leading-relaxed text-ink">
+          <blockquote className="text-[1.127421rem] leading-relaxed text-ink">
             “Once a computer achieves a human level, it will necessarily soar past it.”
           </blockquote>
           <figcaption className="mt-4 text-[0.863097rem] italic text-muted">
