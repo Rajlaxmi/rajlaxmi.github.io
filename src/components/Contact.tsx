@@ -10,7 +10,7 @@ interface ContactLink {
 }
 
 const contactLinks: ContactLink[] = [
-  { label: 'Email', value: 'rajlaxmisah@example.com', href: 'mailto:rajlaxmisah@example.com' },
+  { label: 'Email', value: 'railasan001@gmail.com', href: 'mailto:railasan001@gmail.com' },
   {
     label: 'LinkedIn',
     value: 'in/railasan',
