@@ -54,7 +54,7 @@ function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Portfolio />} />
-        <Route path="/blog" element={<Navigate to="/#blog" replace />} />
+        <Route path="/blog" element={<Navigate to="/" replace state={{ scrollTo: 'blog' }} />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/influences" element={<InfluencesPage />} />
         <Route path="/projects" element={<ProjectsPage />} />

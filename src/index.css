@@ -26,7 +26,7 @@
 
   body {
     @apply bg-paper font-serif text-ink antialiased;
-    font-size: 15.535743px;
+    font-size: 13.982169px;
     line-height: 1.55;
     font-variant-numeric: oldstyle-nums;
     text-rendering: optimizeLegibility;
@@ -135,7 +135,7 @@
    --------------------------------------------------------------------------- */
 .prose {
   @apply text-ink;
-  font-size: 1.243271rem;
+  font-size: 1.118944rem;
   line-height: 1.7;
 }
 
@@ -145,7 +145,7 @@
 
 .prose h2 {
   @apply font-normal text-ink;
-  font-size: 1.864905rem;
+  font-size: 1.678415rem;
   line-height: 1.3;
   letter-spacing: -0.01em;
   margin-top: 2.75em;
@@ -154,7 +154,7 @@
 
 .prose h3 {
   @apply font-normal text-ink;
-  font-size: 1.450482rem;
+  font-size: 1.305434rem;
   line-height: 1.35;
   margin-top: 2.25em;
   margin-bottom: 0;
@@ -181,7 +181,7 @@
   border-color: rgb(var(--accent) / 0.5);
   padding-left: 1.5rem;
   font-style: italic;
-  font-size: 1.312342rem;
+  font-size: 1.181108rem;
   margin-top: 2em;
   margin-bottom: 2em;
 }
@@ -260,7 +260,7 @@
 
 .prose pre code {
   @apply bg-transparent p-0 text-ink;
-  font-size: 1.174199rem;
+  font-size: 1.056779rem;
 }
 
 .prose img {
@@ -274,7 +274,7 @@
 
 .prose figure figcaption {
   @apply text-center text-muted;
-  font-size: 1.036058rem;
+  font-size: 0.932452rem;
   font-style: italic;
   margin-top: 0.9em;
 }
@@ -287,13 +287,13 @@
 .prose table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 1.105129rem;
+  font-size: 0.994616rem;
 }
 
 .prose thead th {
   @apply border-b border-rule text-left font-normal text-faint;
   font-family: theme('fontFamily.mono');
-  font-size: 0.863382rem;
+  font-size: 0.777044rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   padding: 0 1rem 0.6rem 0;

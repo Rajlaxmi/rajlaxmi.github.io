@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Prose from '../components/Prose';
 import ReadingProgress from '../components/ReadingProgress';
+import SectionLink from '../components/SectionLink';
 import useDocumentTitle from '../hooks/useDocumentTitle';
 import { formatDate, getAdjacentPosts, getPostBySlug } from '../lib/posts';
 
@@ -24,9 +25,9 @@ const BlogPost: React.FC = () => {
             <p className="eyebrow mb-4">404</p>
             <h1 className="text-title">This post doesn’t exist.</h1>
             <p className="mt-6">
-              <Link to="/#blog" className="link">
+              <SectionLink sectionId="blog" className="link">
                 Back to the writing
-              </Link>
+              </SectionLink>
             </p>
           </div>
         </main>
@@ -50,7 +51,7 @@ const BlogPost: React.FC = () => {
             <h1 className="mt-5 text-title text-ink">{post.title}</h1>
 
             {post.excerpt && (
-              <p className="mt-6 text-[1.132815rem] italic leading-[1.5] text-muted">{post.excerpt}</p>
+              <p className="mt-6 text-[1.019533rem] italic leading-[1.5] text-muted">{post.excerpt}</p>
             )}
 
             {post.tags.length > 0 && (
@@ -81,7 +82,7 @@ const BlogPost: React.FC = () => {
                     <ArrowLeft size={12} strokeWidth={1.5} />
                     Newer
                   </p>
-                  <p className="text-[1.078872rem] text-ink transition-colors duration-300 group-hover:text-accent">
+                  <p className="text-[0.970985rem] text-ink transition-colors duration-300 group-hover:text-accent">
                     {newer.title}
                   </p>
                 </Link>
@@ -95,7 +96,7 @@ const BlogPost: React.FC = () => {
                     Older
                     <ArrowRight size={12} strokeWidth={1.5} />
                   </p>
-                  <p className="text-[1.078872rem] text-ink transition-colors duration-300 group-hover:text-accent">
+                  <p className="text-[0.970985rem] text-ink transition-colors duration-300 group-hover:text-accent">
                     {older.title}
                   </p>
                 </Link>
@@ -106,8 +107,8 @@ const BlogPost: React.FC = () => {
 
         <div className="border-t border-rule">
           <div className="mx-auto max-w-page px-6 py-12 sm:px-10">
-            <Link
-              to="/#blog"
+            <SectionLink
+              sectionId="blog"
               className="group inline-flex items-center gap-3 text-muted transition-colors duration-300 hover:text-accent"
             >
               <ArrowLeft
@@ -116,7 +117,7 @@ const BlogPost: React.FC = () => {
                 className="transition-transform duration-500 ease-editorial group-hover:-translate-x-1"
               />
               <span className="eyebrow">all writing</span>
-            </Link>
+            </SectionLink>
           </div>
         </div>
       </main>

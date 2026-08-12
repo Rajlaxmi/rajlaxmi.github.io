@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowUpRight, Github } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import SectionLink from '../components/SectionLink';
 import LoopingVideo from '../components/LoopingVideo';
 import useDocumentTitle from '../hooks/useDocumentTitle';
 import useReveal from '../hooks/useReveal';
@@ -26,7 +26,7 @@ const ProjectsPage: React.FC = () => {
         <div className="mx-auto max-w-page px-6 pb-16 pt-32 sm:px-10 sm:pt-40">
           <p className="eyebrow">index</p>
           <h1 className="mt-5 text-title text-ink">Projects</h1>
-          <p className="mt-6 max-w-[38rem] text-[1.078872rem] leading-[1.55] text-muted">
+          <p className="mt-6 max-w-[38rem] text-[0.970985rem] leading-[1.55] text-muted">
             Selected projects that demonstrate the intersection of thoughtful design and
             technical excellence.
           </p>
@@ -69,7 +69,7 @@ const ProjectsPage: React.FC = () => {
 
                 <div>
                   <p className="eyebrow mb-3">{String(index + 1).padStart(2, '0')}</p>
-                  <h3 className="text-[1.294646rem] leading-tight text-ink sm:text-[1.456476rem]">
+                  <h3 className="text-[1.165181rem] leading-tight text-ink sm:text-[1.310828rem]">
                     {project.title}
                   </h3>
                   <p className="mt-3 max-w-measure text-muted">{project.description}</p>
@@ -89,7 +89,7 @@ const ProjectsPage: React.FC = () => {
                           href={project.liveUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="link inline-flex items-center gap-1.5 text-[0.863097rem]"
+                          className="link inline-flex items-center gap-1.5 text-[0.776787rem]"
                         >
                           Live demo
                           <ArrowUpRight size={13} strokeWidth={1.5} />
@@ -100,7 +100,7 @@ const ProjectsPage: React.FC = () => {
                           href={project.githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="link inline-flex items-center gap-1.5 text-[0.863097rem]"
+                          className="link inline-flex items-center gap-1.5 text-[0.776787rem]"
                         >
                           <Github size={13} strokeWidth={1.5} />
                           Code
@@ -114,8 +114,8 @@ const ProjectsPage: React.FC = () => {
           </ol>
 
           <p className="mt-16">
-            <Link
-              to="/#projects"
+            <SectionLink
+              sectionId="projects"
               className="group inline-flex items-center gap-3 text-muted transition-colors duration-300 hover:text-accent"
             >
               <ArrowLeft
@@ -124,7 +124,7 @@ const ProjectsPage: React.FC = () => {
                 className="transition-transform duration-500 ease-editorial group-hover:-translate-x-1"
               />
               <span className="eyebrow">back to portfolio</span>
-            </Link>
+            </SectionLink>
           </p>
         </div>
       </main>

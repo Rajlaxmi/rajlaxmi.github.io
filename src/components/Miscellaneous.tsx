@@ -68,7 +68,7 @@ const Miscellaneous: React.FC = () => (
 
           <div>
             <p className="eyebrow mb-3">{String(index + 1).padStart(2, '0')}</p>
-            <h3 className="text-[1.294646rem] leading-tight text-ink sm:text-[1.456476rem]">
+            <h3 className="text-[1.165181rem] leading-tight text-ink sm:text-[1.310828rem]">
               {item.name}
             </h3>
             <p className="mt-3 max-w-measure text-muted">{item.description}</p>
@@ -84,7 +84,7 @@ const Miscellaneous: React.FC = () => (
                   href={linkItem.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="link inline-flex items-center gap-1.5 text-[0.863097rem]"
+                  className="link inline-flex items-center gap-1.5 text-[0.776787rem]"
                 >
                   {linkItem.label}
                   <ArrowUpRight size={13} strokeWidth={1.5} />

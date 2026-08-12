@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { ArrowDown } from 'lucide-react';
+import SectionLink from './SectionLink';
 
 const Hero: React.FC = () => (
   <section id="hero" className="mx-auto max-w-page px-6 sm:px-10">
@@ -12,7 +12,7 @@ const Hero: React.FC = () => (
           </h1>
 
           <p
-            className="mt-6 max-w-measure text-[1.132815rem] italic text-muted sm:text-[1.294646rem]"
+            className="mt-6 max-w-measure text-[1.019533rem] italic text-muted sm:text-[1.165181rem]"
             data-reveal
             style={{ '--reveal-delay': '120ms' } as React.CSSProperties}
           >
@@ -24,8 +24,8 @@ const Hero: React.FC = () => (
             data-reveal
             style={{ '--reveal-delay': '360ms' } as React.CSSProperties}
           >
-            <Link
-              to="/#about"
+            <SectionLink
+              sectionId="about"
               className="group inline-flex items-center gap-3 text-muted transition-colors duration-300 hover:text-accent"
             >
               <span className="eyebrow">explore work</span>
@@ -34,7 +34,7 @@ const Hero: React.FC = () => (
                 strokeWidth={1.5}
                 className="transition-transform duration-500 ease-editorial group-hover:translate-y-1"
               />
-            </Link>
+            </SectionLink>
           </div>
         </div>
 
@@ -45,10 +45,10 @@ const Hero: React.FC = () => (
           data-reveal
           style={{ '--reveal-delay': '240ms' } as React.CSSProperties}
         >
-          <blockquote className="text-[1.127421rem] leading-relaxed text-ink">
+          <blockquote className="text-[1.014679rem] leading-relaxed text-ink">
             “Once a computer achieves a human level, it will necessarily soar past it.”
           </blockquote>
-          <figcaption className="mt-4 text-[0.863097rem] italic text-muted">
+          <figcaption className="mt-4 text-[0.776787rem] italic text-muted">
             Ray Kurzweil, <cite className="not-italic">The Singularity Is Near</cite> (2005)
           </figcaption>
         </figure>
