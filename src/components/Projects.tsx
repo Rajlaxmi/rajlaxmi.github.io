@@ -15,11 +15,11 @@ const Projects: React.FC = () => (
     label="work"
     lead="Selected projects that demonstrate the intersection of thoughtful design and technical excellence."
   >
-    <ol className="mt-14 space-y-16 sm:space-y-24">
+    <ol className="mt-10 space-y-10 sm:space-y-14">
       {projects.map((project, index) => (
         <li
           key={project.title}
-          className={`grid items-center gap-8 md:gap-12 ${
+          className={`grid items-center gap-6 md:gap-10 ${
             project.video || project.image ? 'md:grid-cols-2' : ''
           }`}
           data-reveal
@@ -50,13 +50,13 @@ const Projects: React.FC = () => (
           )}
 
           <div>
-            <p className="eyebrow mb-3">{String(index + 1).padStart(2, '0')}</p>
+            <p className="eyebrow mb-2">{String(index + 1).padStart(2, '0')}</p>
             <h3 className="text-[1.165181rem] leading-tight text-ink sm:text-[1.310828rem]">
               {project.title}
             </h3>
-            <p className="mt-3 max-w-measure text-muted">{project.description}</p>
+            <p className="mt-2 max-w-measure text-muted">{project.description}</p>
 
-            <ul className="mt-5 flex flex-wrap gap-x-4 gap-y-2">
+            <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-2">
               {project.tags.map((tag) => (
                 <li key={tag} className="eyebrow text-muted">
                   {tag}
@@ -65,7 +65,7 @@ const Projects: React.FC = () => (
             </ul>
 
             {(isLive(project.liveUrl) || isLive(project.githubUrl)) && (
-              <div className="mt-6 flex flex-wrap items-center gap-6">
+              <div className="mt-4 flex flex-wrap items-center gap-6">
                 {isLive(project.liveUrl) && (
                   <a
                     href={project.liveUrl}
@@ -95,7 +95,7 @@ const Projects: React.FC = () => (
       ))}
     </ol>
 
-    <p className="mt-10" data-reveal>
+    <p className="mt-8" data-reveal>
       <Link
         to="/projects"
         className="group inline-flex items-center gap-3 text-muted transition-colors duration-300 hover:text-accent"

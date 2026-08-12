@@ -42,11 +42,11 @@ const Miscellaneous: React.FC = () => (
     label="miscellaneous"
     lead="Pursuits that live alongside the work."
   >
-    <ol className="mt-14 space-y-16 sm:space-y-24">
+    <ol className="mt-10 space-y-10 sm:space-y-14">
       {miscItems.map((item, index) => (
         <li
           key={item.name}
-          className={`grid items-center gap-8 md:gap-12 ${
+          className={`grid items-center gap-6 md:gap-10 ${
             index % 2 === 1 ? 'md:grid-cols-[2fr_3fr]' : 'md:grid-cols-[3fr_2fr]'
           }`}
           data-reveal
@@ -67,17 +67,17 @@ const Miscellaneous: React.FC = () => (
           </div>
 
           <div>
-            <p className="eyebrow mb-3">{String(index + 1).padStart(2, '0')}</p>
+            <p className="eyebrow mb-2">{String(index + 1).padStart(2, '0')}</p>
             <h3 className="text-[1.165181rem] leading-tight text-ink sm:text-[1.310828rem]">
               {item.name}
             </h3>
-            <p className="mt-3 max-w-measure text-muted">{item.description}</p>
+            <p className="mt-2 max-w-measure text-muted">{item.description}</p>
 
-            <ul className="mt-5 flex flex-wrap gap-x-4 gap-y-2">
+            <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-2">
               <li className="eyebrow text-muted">{item.category}</li>
             </ul>
 
-            <div className="mt-6 flex flex-wrap items-center gap-6">
+            <div className="mt-4 flex flex-wrap items-center gap-6">
               {item.links.map((linkItem) => (
                 <a
                   key={linkItem.label}
