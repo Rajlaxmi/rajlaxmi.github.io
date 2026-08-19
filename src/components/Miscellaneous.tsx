@@ -1,13 +1,12 @@
 import React from 'react';
-import { ArrowUpRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import Section from './Section';
 
 interface MiscLink {
   label: string;
   href: string;
 }
-
-const moreMiscLinks: MiscLink[] = [{ label: 'little shelf', href: 'https://raila.io/little-shelf' }];
 
 interface MiscItem {
   name: string;
@@ -98,25 +97,19 @@ const Miscellaneous: React.FC = () => (
       ))}
     </ol>
 
-    <ul className="mt-8 flex flex-wrap items-center gap-6" data-reveal>
-      {moreMiscLinks.map((linkItem) => (
-        <li key={linkItem.label}>
-          <a
-            href={linkItem.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center gap-3 text-muted transition-colors duration-300 hover:text-accent"
-          >
-            <span className="eyebrow">{linkItem.label}</span>
-            <ArrowUpRight
-              size={14}
-              strokeWidth={1.5}
-              className="transition-transform duration-500 ease-editorial group-hover:translate-x-1"
-            />
-          </a>
-        </li>
-      ))}
-    </ul>
+    <p className="mt-8" data-reveal>
+      <Link
+        to="/misc"
+        className="group inline-flex items-center gap-3 text-muted transition-colors duration-300 hover:text-accent"
+      >
+        <span className="eyebrow">all misc</span>
+        <ArrowRight
+          size={14}
+          strokeWidth={1.5}
+          className="transition-transform duration-500 ease-editorial group-hover:translate-x-1"
+        />
+      </Link>
+    </p>
   </Section>
 );
 

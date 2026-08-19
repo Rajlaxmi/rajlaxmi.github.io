@@ -5,6 +5,7 @@ import BlogPost from './pages/BlogPost';
 import InfluencesPage from './pages/Influences';
 import ProjectsPage from './pages/Projects';
 import WritingPage from './pages/Writing';
+import MiscPage from './pages/Misc';
 import ScrollToTop from './components/ScrollToTop';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -59,6 +60,7 @@ function App() {
         <Route path="/influences" element={<InfluencesPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/writing" element={<WritingPage />} />
+        <Route path="/misc" element={<MiscPage />} />
         <Route path="/resume" element={<ResumeRedirect />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
