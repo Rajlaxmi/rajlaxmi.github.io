@@ -41,12 +41,12 @@ const Influences: React.FC = () => (
   >
     <ul className="mt-8 border-t border-rule">
       {featuredOrganizations.map((org) => (
-        <li key={org.name} className="border-b border-rule py-4" data-reveal>
+        <li key={org.name} className="group border-b border-rule py-4" data-reveal>
           <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
-            <h3 className="text-[1.068083rem] text-ink">{org.name}</h3>
+            <h3 className="text-[0.888645rem] text-ink transition-colors duration-300 group-hover:text-accent">{org.name}</h3>
             <span className="eyebrow">{org.category}</span>
           </div>
-          <p className="mt-1.5 max-w-none text-[0.961274rem] text-muted sm:whitespace-nowrap">
+          <p className="mt-1.5 max-w-none text-[0.799780rem] text-muted sm:whitespace-nowrap">
             {org.description}
           </p>
         </li>
@@ -56,7 +56,7 @@ const Influences: React.FC = () => (
     <p className="mt-8" data-reveal>
       <Link
         to="/influences"
-        className="group inline-flex items-center gap-3 text-muted transition-colors duration-300 hover:text-accent"
+        className="group inline-flex items-center gap-3 text-muted transition-colors duration-300 hover:text-ink"
       >
         <span className="eyebrow">all influences</span>
         <ArrowRight

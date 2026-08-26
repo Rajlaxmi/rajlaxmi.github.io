@@ -5,17 +5,19 @@
 /* ---------------------------------------------------------------------------
    Design tokens
 
-   Warm paper light theme. Values are raw RGB channels so Tailwind's
-   `<alpha-value>` syntax works (see tailwind.config.js).
+   Monochrome, editorial. White paper, near-black ink, grayscale everywhere —
+   no accent color. Light-only by design (no dark mode). Values are raw RGB
+   channels so Tailwind's `<alpha-value>` syntax works (see tailwind.config.js).
    --------------------------------------------------------------------------- */
 @layer base {
   :root {
-    --paper: 247 246 243;
-    --surface: 240 238 233;
-    --ink: 26 25 23;
-    --muted: 90 87 81;
-    --faint: 124 120 112;
-    --rule: 223 219 211;
+    --paper: 255 255 255;
+    --surface: 245 245 245;
+    --ink: 17 17 17;
+    --muted: 85 85 85;
+    --faint: 153 153 153;
+    --rule: 229 231 235;
+    /* Used only for the blog-post-title hover highlight, to match raila.io. */
     --accent: 154 79 46;
   }
 
@@ -25,12 +27,9 @@
   }
 
   body {
-    @apply bg-paper font-serif text-ink antialiased;
-    font-size: 13.982169px;
-    line-height: 1.55;
-    font-variant-numeric: oldstyle-nums;
-    text-rendering: optimizeLegibility;
-    -webkit-text-stroke: 0.135px currentColor;
+    @apply bg-paper font-sans text-ink antialiased;
+    font-size: 12.48px;
+    line-height: 1.6;
   }
 
   /* Anchor targets clear the fixed header. */
@@ -39,11 +38,11 @@
   }
 
   ::selection {
-    background-color: rgb(var(--accent) / 0.18);
+    background-color: rgb(var(--ink) / 0.12);
   }
 
   :focus-visible {
-    outline: 2px solid rgb(var(--accent));
+    outline: 2px solid rgb(var(--ink));
     outline-offset: 3px;
     border-radius: 2px;
   }
@@ -57,11 +56,28 @@
 @layer components {
   /* Small tracked-out label used for section rails and metadata. */
   .eyebrow {
-    @apply font-mono text-label uppercase text-faint;
+    @apply text-label uppercase text-faint;
   }
 
   /* Text link: the underline grows in from the left on hover. */
   .link {
+    @apply relative text-ink transition-colors duration-300;
+    text-decoration: none;
+    background-image: linear-gradient(rgb(var(--ink)), rgb(var(--ink)));
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 0% 1px;
+    transition: background-size 0.4s cubic-bezier(0.22, 1, 0.36, 1), color 0.3s;
+  }
+
+  .link:hover,
+  .link:focus-visible {
+    background-size: 100% 1px;
+  }
+
+  /* Same growing-underline mechanic as .link, but in the orange accent used
+     for project links, to match raila.io. */
+  .link-accent {
     @apply relative text-ink transition-colors duration-300;
     text-decoration: none;
     background-image: linear-gradient(rgb(var(--accent)), rgb(var(--accent)));
@@ -71,8 +87,8 @@
     transition: background-size 0.4s cubic-bezier(0.22, 1, 0.36, 1), color 0.3s;
   }
 
-  .link:hover,
-  .link:focus-visible {
+  .link-accent:hover,
+  .link-accent:focus-visible {
     @apply text-accent;
     background-size: 100% 1px;
   }
@@ -88,8 +104,7 @@
 
   .link-quiet:hover,
   .link-quiet:focus-visible {
-    @apply text-accent;
-    text-decoration-color: rgb(var(--accent));
+    text-decoration-color: rgb(var(--ink));
   }
 }
 
@@ -135,7 +150,7 @@
    --------------------------------------------------------------------------- */
 .prose {
   @apply text-ink;
-  font-size: 1.118944rem;
+  font-size: 0.930961rem;
   line-height: 1.7;
 }
 
@@ -145,7 +160,7 @@
 
 .prose h2 {
   @apply font-normal text-ink;
-  font-size: 1.678415rem;
+  font-size: 1.396441rem;
   line-height: 1.3;
   letter-spacing: -0.01em;
   margin-top: 2.75em;
@@ -154,7 +169,7 @@
 
 .prose h3 {
   @apply font-normal text-ink;
-  font-size: 1.305434rem;
+  font-size: 1.086121rem;
   line-height: 1.35;
   margin-top: 2.25em;
   margin-bottom: 0;
@@ -178,10 +193,10 @@
 
 .prose blockquote {
   @apply border-l text-muted;
-  border-color: rgb(var(--accent) / 0.5);
+  border-color: rgb(var(--ink) / 0.3);
   padding-left: 1.5rem;
   font-style: italic;
-  font-size: 1.181108rem;
+  font-size: 0.982681rem;
   margin-top: 2em;
   margin-bottom: 2em;
 }
@@ -224,7 +239,7 @@
 
 .prose li.task-list-item input[type='checkbox'] {
   margin-right: 0.55em;
-  accent-color: rgb(var(--accent));
+  accent-color: rgb(var(--ink));
 }
 
 .prose ol {
@@ -245,7 +260,7 @@
 }
 
 .prose code {
-  @apply bg-surface font-mono text-accent;
+  @apply bg-surface font-mono text-ink;
   padding: 0.1em 0.35em;
   border-radius: 3px;
   font-size: 1.174199em;
@@ -260,7 +275,7 @@
 
 .prose pre code {
   @apply bg-transparent p-0 text-ink;
-  font-size: 1.056779rem;
+  font-size: 0.879240rem;
 }
 
 .prose img {
@@ -274,7 +289,7 @@
 
 .prose figure figcaption {
   @apply text-center text-muted;
-  font-size: 0.932452rem;
+  font-size: 0.775800rem;
   font-style: italic;
   margin-top: 0.9em;
 }
@@ -287,13 +302,13 @@
 .prose table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.994616rem;
+  font-size: 0.827521rem;
 }
 
 .prose thead th {
   @apply border-b border-rule text-left font-normal text-faint;
   font-family: theme('fontFamily.mono');
-  font-size: 0.777044rem;
+  font-size: 0.646500rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   padding: 0 1rem 0.6rem 0;

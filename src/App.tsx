@@ -37,7 +37,7 @@ const NotFound: React.FC = () => (
     <main className="mx-auto flex min-h-[70vh] max-w-page items-center px-6 sm:px-10">
       <div>
         <p className="eyebrow mb-4">404</p>
-        <h1 className="text-title text-ink">Nothing here.</h1>
+        <h1 className="font-serif text-title text-ink">Nothing here.</h1>
         <p className="mt-6">
           <Link to="/" className="link">
             Back to the beginning

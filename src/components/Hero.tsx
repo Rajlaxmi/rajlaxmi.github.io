@@ -7,12 +7,12 @@ const Hero: React.FC = () => (
     <div className="flex min-h-[88vh] flex-col justify-center pb-20 pt-32 sm:pt-40">
       <div className="grid gap-14 lg:grid-cols-[minmax(0,1fr)_18rem] lg:gap-20">
         <div>
-          <h1 className="text-display" data-reveal>
+          <h1 className="font-serif text-display" data-reveal>
             raila
           </h1>
 
           <p
-            className="mt-6 max-w-measure text-[1.019533rem] italic text-muted sm:text-[1.165181rem]"
+            className="mt-6 max-w-measure text-[0.848251rem] italic text-muted sm:text-[0.969431rem]"
             data-reveal
             style={{ '--reveal-delay': '120ms' } as React.CSSProperties}
           >
@@ -26,7 +26,7 @@ const Hero: React.FC = () => (
           >
             <SectionLink
               sectionId="about"
-              className="group inline-flex items-center gap-3 text-muted transition-colors duration-300 hover:text-accent"
+              className="group inline-flex items-center gap-3 text-muted transition-colors duration-300 hover:text-ink"
             >
               <span className="eyebrow">explore work</span>
               <ArrowDown
@@ -45,10 +45,10 @@ const Hero: React.FC = () => (
           data-reveal
           style={{ '--reveal-delay': '240ms' } as React.CSSProperties}
         >
-          <blockquote className="text-[1.014679rem] leading-relaxed text-ink">
+          <blockquote className="text-[0.844213rem] leading-relaxed text-ink">
             “Once a computer achieves a human level, it will necessarily soar past it.”
           </blockquote>
-          <figcaption className="mt-4 text-[0.776787rem] italic text-muted">
+          <figcaption className="mt-4 text-[0.646287rem] italic text-muted">
             Ray Kurzweil, <cite className="not-italic">The Singularity Is Near</cite> (2005)
           </figcaption>
         </figure>

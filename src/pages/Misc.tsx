@@ -57,8 +57,8 @@ const MiscPage: React.FC = () => {
       <main>
         <div className="mx-auto max-w-page px-6 pb-16 pt-32 sm:px-10 sm:pt-40">
           <p className="eyebrow">index</p>
-          <h1 className="mt-5 text-title text-ink">Miscellaneous</h1>
-          <p className="mt-6 max-w-[38rem] text-[0.970985rem] leading-[1.55] text-muted">
+          <h1 className="mt-5 font-serif text-title text-ink">Miscellaneous</h1>
+          <p className="mt-6 max-w-[38rem] text-[0.807860rem] leading-[1.55] text-muted">
             Pursuits that live alongside the work.
           </p>
         </div>
@@ -66,13 +66,15 @@ const MiscPage: React.FC = () => {
         <div className="mx-auto max-w-page px-6 pb-24 sm:px-10">
           <ol className="grid border-t border-rule lg:grid-cols-2 lg:gap-x-14">
             {miscEntries.map((entry, index) => (
-              <li key={entry.name} className="border-b border-rule py-8" data-reveal>
+              <li key={entry.name} className="group border-b border-rule py-8" data-reveal>
                 <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
                   <div className="inline-flex items-baseline gap-2">
-                    <span className="eyebrow text-accent">
+                    <span className="eyebrow text-ink">
                       {String(index + 1).padStart(2, '0')}
                     </span>
-                    <span className="text-[0.970985rem] text-ink">{entry.name}</span>
+                    <span className="text-[0.807860rem] text-ink transition-colors duration-300 group-hover:text-accent">
+                      {entry.name}
+                    </span>
                   </div>
                   <span className="eyebrow">{entry.category}</span>
                 </div>
@@ -86,7 +88,7 @@ const MiscPage: React.FC = () => {
                       href={linkItem.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="link inline-flex items-center gap-1.5 text-[0.776787rem]"
+                      className="link-accent inline-flex items-center gap-1.5 text-[0.646287rem]"
                     >
                       {linkItem.label}
                       <ArrowUpRight size={13} strokeWidth={1.5} />
@@ -100,7 +102,7 @@ const MiscPage: React.FC = () => {
           <p className="mt-10">
             <SectionLink
               sectionId="misc"
-              className="group inline-flex items-center gap-3 text-muted transition-colors duration-300 hover:text-accent"
+              className="group inline-flex items-center gap-3 text-muted transition-colors duration-300 hover:text-ink"
             >
               <ArrowLeft
                 size={14}

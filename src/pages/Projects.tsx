@@ -25,8 +25,8 @@ const ProjectsPage: React.FC = () => {
       <main>
         <div className="mx-auto max-w-page px-6 pb-16 pt-32 sm:px-10 sm:pt-40">
           <p className="eyebrow">index</p>
-          <h1 className="mt-5 text-title text-ink">Projects</h1>
-          <p className="mt-6 max-w-[38rem] text-[0.970985rem] leading-[1.55] text-muted">
+          <h1 className="mt-5 font-serif text-title text-ink">Projects</h1>
+          <p className="mt-6 max-w-[38rem] text-[0.807860rem] leading-[1.55] text-muted">
             Selected projects that demonstrate the intersection of thoughtful design and
             technical excellence.
           </p>
@@ -37,7 +37,7 @@ const ProjectsPage: React.FC = () => {
             {projects.map((project, index) => (
               <li
                 key={project.title}
-                className={`grid items-center gap-8 md:gap-12 ${
+                className={`group grid items-center gap-8 md:gap-12 ${
                   project.video || project.image ? 'md:grid-cols-2' : ''
                 }`}
                 data-reveal
@@ -69,7 +69,7 @@ const ProjectsPage: React.FC = () => {
 
                 <div>
                   <p className="eyebrow mb-3">{String(index + 1).padStart(2, '0')}</p>
-                  <h3 className="text-[1.165181rem] leading-tight text-ink sm:text-[1.310828rem]">
+                  <h3 className="text-[0.969431rem] leading-tight text-ink transition-colors duration-300 group-hover:text-accent sm:text-[1.090608rem]">
                     {project.title}
                   </h3>
                   <p className="mt-3 max-w-measure text-muted">{project.description}</p>
@@ -89,7 +89,7 @@ const ProjectsPage: React.FC = () => {
                           href={project.liveUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="link inline-flex items-center gap-1.5 text-[0.776787rem]"
+                          className="link-accent inline-flex items-center gap-1.5 text-[0.646287rem]"
                         >
                           Live demo
                           <ArrowUpRight size={13} strokeWidth={1.5} />
@@ -100,7 +100,7 @@ const ProjectsPage: React.FC = () => {
                           href={project.githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="link inline-flex items-center gap-1.5 text-[0.776787rem]"
+                          className="link-accent inline-flex items-center gap-1.5 text-[0.646287rem]"
                         >
                           <Github size={13} strokeWidth={1.5} />
                           Code
@@ -116,7 +116,7 @@ const ProjectsPage: React.FC = () => {
           <p className="mt-16">
             <SectionLink
               sectionId="projects"
-              className="group inline-flex items-center gap-3 text-muted transition-colors duration-300 hover:text-accent"
+              className="group inline-flex items-center gap-3 text-muted transition-colors duration-300 hover:text-ink"
             >
               <ArrowLeft
                 size={14}

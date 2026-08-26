@@ -19,7 +19,7 @@ const Projects: React.FC = () => (
       {projects.map((project, index) => (
         <li
           key={project.title}
-          className={`grid items-center gap-6 md:gap-10 ${
+          className={`group grid items-center gap-6 md:gap-10 ${
             project.video || project.image ? 'md:grid-cols-2' : ''
           }`}
           data-reveal
@@ -51,7 +51,7 @@ const Projects: React.FC = () => (
 
           <div>
             <p className="eyebrow mb-2">{String(index + 1).padStart(2, '0')}</p>
-            <h3 className="text-[1.165181rem] leading-tight text-ink sm:text-[1.310828rem]">
+            <h3 className="text-[0.969431rem] leading-tight text-ink transition-colors duration-300 group-hover:text-accent sm:text-[1.090608rem]">
               {project.title}
             </h3>
             <p className="mt-2 max-w-measure text-muted">{project.description}</p>
@@ -71,7 +71,7 @@ const Projects: React.FC = () => (
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="link inline-flex items-center gap-1.5 text-[0.776787rem]"
+                    className="link-accent inline-flex items-center gap-1.5 text-[0.646287rem]"
                   >
                     Live demo
                     <ArrowUpRight size={13} strokeWidth={1.5} />
@@ -82,7 +82,7 @@ const Projects: React.FC = () => (
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="link inline-flex items-center gap-1.5 text-[0.776787rem]"
+                    className="link-accent inline-flex items-center gap-1.5 text-[0.646287rem]"
                   >
                     <Github size={13} strokeWidth={1.5} />
                     Code
@@ -98,7 +98,7 @@ const Projects: React.FC = () => (
     <p className="mt-8" data-reveal>
       <Link
         to="/projects"
-        className="group inline-flex items-center gap-3 text-muted transition-colors duration-300 hover:text-accent"
+        className="group inline-flex items-center gap-3 text-muted transition-colors duration-300 hover:text-ink"
       >
         <span className="eyebrow">all projects</span>
         <ArrowRight

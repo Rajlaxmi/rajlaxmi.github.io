@@ -97,8 +97,8 @@ const InfluencesPage: React.FC = () => {
       <main>
         <div className="mx-auto max-w-page px-6 pb-16 pt-32 sm:px-10 sm:pt-40">
           <p className="eyebrow">index</p>
-          <h1 className="mt-5 text-title text-ink">Influences</h1>
-          <p className="mt-6 max-w-[38rem] text-[0.970985rem] leading-[1.55] text-muted">
+          <h1 className="mt-5 font-serif text-title text-ink">Influences</h1>
+          <p className="mt-6 max-w-[38rem] text-[0.807860rem] leading-[1.55] text-muted">
             These organizations and sources have profoundly influenced my approach to design,
             development, and life. Each represents thoughtful, intentional work that transcends
             immediate trends. I financially support some of these organizations.
@@ -116,10 +116,10 @@ const InfluencesPage: React.FC = () => {
                     rel="noopener noreferrer"
                     className="group inline-flex items-baseline gap-2"
                   >
-                    <span className="eyebrow text-accent">
+                    <span className="eyebrow text-ink">
                       {String(index + 1).padStart(2, '0')}
                     </span>
-                    <span className="text-[0.970985rem] text-ink transition-colors duration-300 group-hover:text-accent">
+                    <span className="text-[0.807860rem] text-ink transition-colors duration-300 group-hover:text-accent">
                       {org.name}
                     </span>
                     <ArrowUpRight
@@ -132,7 +132,7 @@ const InfluencesPage: React.FC = () => {
                 </div>
 
                 <p className="mt-3 max-w-measure text-muted">{org.description}</p>
-                <p className="mt-3 max-w-measure border-l border-rule pl-4 text-[0.776787rem] italic text-faint">
+                <p className="mt-3 max-w-measure border-l border-rule pl-4 text-[0.646287rem] italic text-faint">
                   {org.impact}
                 </p>
               </li>
@@ -142,7 +142,7 @@ const InfluencesPage: React.FC = () => {
           <p className="mt-10">
             <SectionLink
               sectionId="influences"
-              className="group inline-flex items-center gap-3 text-muted transition-colors duration-300 hover:text-accent"
+              className="group inline-flex items-center gap-3 text-muted transition-colors duration-300 hover:text-ink"
             >
               <ArrowLeft
                 size={14}

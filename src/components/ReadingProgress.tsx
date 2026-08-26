@@ -31,7 +31,7 @@ const ReadingProgress: React.FC = () => {
   return (
     <div aria-hidden="true" className="fixed inset-x-0 top-0 z-[60] h-px">
       <div
-        className="h-full origin-left bg-accent"
+        className="h-full origin-left bg-ink"
         style={{ transform: `scaleX(${progress})`, transition: 'transform 120ms linear' }}
       />
     </div>

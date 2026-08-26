@@ -57,7 +57,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
         <div className="mx-auto flex max-w-page items-center justify-between px-6 py-4 sm:px-10">
           <Link
             to="/"
-            className="text-[0.907871rem] tracking-[0.02em] text-ink transition-colors duration-300 hover:text-accent"
+            className="text-[0.755349rem] tracking-[0.02em] text-ink transition-colors duration-300 hover:text-muted"
           >
             raila
           </Link>
@@ -72,9 +72,9 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
                       <SectionLink
                         sectionId={item.id}
                         aria-current={isActive ? 'true' : undefined}
-                        className={`text-[0.854466rem] transition-colors duration-300 hover:text-accent ${
+                        className={`text-[0.710916rem] transition-colors duration-300 hover:text-ink ${
                           isActive
-                            ? 'text-ink underline decoration-accent decoration-1 underline-offset-[6px]'
+                            ? 'text-ink underline decoration-1 underline-offset-[6px]'
                             : 'text-muted'
                         }`}
                       >
@@ -91,7 +91,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
               onClick={() => setIsMenuOpen((open) => !open)}
               aria-expanded={isMenuOpen}
               aria-controls="mobile-menu"
-              className="eyebrow text-muted transition-colors duration-300 hover:text-accent md:hidden"
+              className="eyebrow text-muted transition-colors duration-300 hover:text-ink md:hidden"
             >
               {isMenuOpen ? 'close' : 'menu'}
             </button>
@@ -112,7 +112,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
                 <SectionLink
                   sectionId={item.id}
                   onClick={() => setIsMenuOpen(false)}
-                  className="block py-4 text-[1.201594rem] text-ink transition-colors duration-300 hover:text-accent"
+                  className="block py-4 text-[0.999726rem] text-ink transition-colors duration-300 hover:text-muted"
                 >
                   {item.label}
                 </SectionLink>

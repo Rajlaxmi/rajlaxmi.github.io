@@ -23,7 +23,7 @@ const BlogPost: React.FC = () => {
         <main className="mx-auto flex min-h-[70vh] max-w-page items-center px-6 sm:px-10">
           <div>
             <p className="eyebrow mb-4">404</p>
-            <h1 className="text-title">This post doesn’t exist.</h1>
+            <h1 className="font-serif text-title">This post doesn’t exist.</h1>
             <p className="mt-6">
               <SectionLink sectionId="blog" className="link">
                 Back to the writing
@@ -48,10 +48,10 @@ const BlogPost: React.FC = () => {
               {post.category} · {formatDate(post.date)} · {post.readTime}
             </p>
 
-            <h1 className="mt-5 text-title text-ink">{post.title}</h1>
+            <h1 className="mt-5 font-serif text-title text-ink">{post.title}</h1>
 
             {post.excerpt && (
-              <p className="mt-6 text-[1.019533rem] italic leading-[1.5] text-muted">{post.excerpt}</p>
+              <p className="mt-6 text-[0.848251rem] italic leading-[1.5] text-muted">{post.excerpt}</p>
             )}
 
             {post.tags.length > 0 && (
@@ -82,7 +82,7 @@ const BlogPost: React.FC = () => {
                     <ArrowLeft size={12} strokeWidth={1.5} />
                     Newer
                   </p>
-                  <p className="text-[0.970985rem] text-ink transition-colors duration-300 group-hover:text-accent">
+                  <p className="text-[0.807860rem] text-ink transition-colors duration-300 group-hover:text-accent">
                     {newer.title}
                   </p>
                 </Link>
@@ -96,7 +96,7 @@ const BlogPost: React.FC = () => {
                     Older
                     <ArrowRight size={12} strokeWidth={1.5} />
                   </p>
-                  <p className="text-[0.970985rem] text-ink transition-colors duration-300 group-hover:text-accent">
+                  <p className="text-[0.807860rem] text-ink transition-colors duration-300 group-hover:text-accent">
                     {older.title}
                   </p>
                 </Link>
@@ -109,7 +109,7 @@ const BlogPost: React.FC = () => {
           <div className="mx-auto max-w-page px-6 py-12 sm:px-10">
             <SectionLink
               sectionId="blog"
-              className="group inline-flex items-center gap-3 text-muted transition-colors duration-300 hover:text-accent"
+              className="group inline-flex items-center gap-3 text-muted transition-colors duration-300 hover:text-ink"
             >
               <ArrowLeft
                 size={14}

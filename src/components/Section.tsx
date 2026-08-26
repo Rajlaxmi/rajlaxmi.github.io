@@ -23,7 +23,7 @@ const Section: React.FC<SectionProps> = ({ id, label, index, lead, children, cla
       <div className="grid gap-8 py-20 md:grid-cols-[7rem_minmax(0,1fr)] md:gap-14 md:py-28 lg:grid-cols-[11rem_minmax(0,1fr)]">
         <div className="md:sticky md:top-28 md:self-start" data-reveal>
           <h2 className="eyebrow flex items-baseline gap-3 md:flex-col md:gap-2">
-            <span className="text-accent">{index}</span>
+            <span className="text-ink">{index}</span>
             <span>{label}</span>
           </h2>
         </div>
@@ -31,7 +31,7 @@ const Section: React.FC<SectionProps> = ({ id, label, index, lead, children, cla
         <div className="min-w-0">
           {lead && (
             <p
-              className="max-w-[38rem] text-[1.068082rem] leading-[1.5] text-ink sm:text-[1.165181rem]"
+              className="max-w-[38rem] text-[0.888645rem] leading-[1.5] text-ink sm:text-[0.969431rem]"
               data-reveal
             >
               {lead}

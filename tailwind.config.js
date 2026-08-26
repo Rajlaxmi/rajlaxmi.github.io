@@ -13,6 +13,14 @@ export default {
         accent: 'rgb(var(--accent) / <alpha-value>)',
       },
       fontFamily: {
+        sans: [
+          'InterVariable',
+          'Inter',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Segoe UI"',
+          'sans-serif',
+        ],
         serif: [
           '"Iowan Old Style"',
           'Palatino',
@@ -34,9 +42,9 @@ export default {
       },
       fontSize: {
         // Display sizes tuned for the serif's small x-height.
-        display: ['clamp(2.184713rem, 6.117199vw, 3.495542rem)', { lineHeight: '0.95', letterSpacing: '-0.02em' }],
-        title: ['clamp(1.407926rem, 3.058599vw, 1.941968rem)', { lineHeight: '1.1', letterSpacing: '-0.015em' }],
-        label: ['0.697343rem', { lineHeight: '1', letterSpacing: '0.18em' }],
+        display: ['clamp(1.817681rem, 5.089509vw, 2.908291rem)', { lineHeight: '0.95', letterSpacing: '-0.02em' }],
+        title: ['clamp(1.171395rem, 2.544754vw, 1.615717rem)', { lineHeight: '1.1', letterSpacing: '-0.015em' }],
+        label: ['0.580189rem', { lineHeight: '1', letterSpacing: '0.18em' }],
       },
       maxWidth: {
         measure: '34rem',
