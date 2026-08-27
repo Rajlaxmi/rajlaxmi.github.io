@@ -16,12 +16,15 @@ function isExternal(href = ''): boolean {
   return /^https?:\/\//i.test(href);
 }
 
-/** True for a paragraph that opens with a bold "Contents:" label — the post's table of contents. */
-function isTocParagraph(node?: { children: Array<{ type: string; tagName?: string; children?: Array<{ type: string; value?: string }> }> }): boolean {
-  const first = node?.children[0];
+type HastNode = { type: string; tagName?: string; children?: HastNode[]; value?: string };
+
+/** True when a node's first child paragraph opens with the exact bold `label` text. */
+function opensWithLabel(node: { children?: HastNode[] } | undefined, label: string): boolean {
+  const firstPara = node?.children?.find((child) => child.type === 'element' && child.tagName === 'p') ?? node?.children?.[0];
+  const first = firstPara?.children?.[0];
   if (!first || first.type !== 'element' || first.tagName !== 'strong') return false;
-  const label = first.children?.[0];
-  return label?.type === 'text' && label.value === 'Contents:';
+  const text = first.children?.[0];
+  return text?.type === 'text' && text.value === label;
 }
 
 const components: Components = {
@@ -79,11 +82,19 @@ const components: Components = {
     if (onlyChild && onlyChild.type === 'element' && onlyChild.tagName === 'img') {
       return <>{children}</>;
     }
-    if (isTocParagraph(node)) {
+    if (opensWithLabel(node, 'Contents:')) {
       return <p className="toc-line">{children}</p>;
     }
     return <p>{children}</p>;
   },
+
+  // The "Under the hood." aside runs at a smaller, calmer scale than body text.
+  blockquote: ({ node, children }) =>
+    opensWithLabel(node, 'Under the hood.') ? (
+      <blockquote className="callout">{children}</blockquote>
+    ) : (
+      <blockquote>{children}</blockquote>
+    ),
 
   img: ({ src, alt }) => (
     <figure className="my-10">

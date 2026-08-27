@@ -206,8 +206,34 @@
   margin-bottom: 2em;
 }
 
-.prose blockquote p + p {
+.prose blockquote > * + * {
   margin-top: 1em;
+}
+
+/* "Under the hood" asides: a blockquote opening with a bold "Under the
+   hood." label, singled out by Prose.tsx to run smaller and calmer than
+   body text, matching the table-of-contents scale. */
+.prose blockquote.callout {
+  @apply not-italic border-rule text-muted;
+  font-size: 0.7rem;
+  line-height: 1.75;
+}
+
+.prose blockquote.callout strong {
+  @apply text-ink;
+  font-weight: 600;
+}
+
+.prose blockquote.callout code {
+  font-size: 0.95em;
+}
+
+.prose blockquote.callout pre {
+  padding: 0.85rem 1rem;
+}
+
+.prose blockquote.callout pre code {
+  font-size: 0.92em;
 }
 
 .prose ul,
