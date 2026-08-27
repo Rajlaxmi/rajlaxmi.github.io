@@ -6,7 +6,6 @@ category: Machine Learning
 excerpt: A section-by-section walkthrough of the Transformer paper — architecture, code, and a couple of real visualizations, not just prose.
 tags: [transformers, attention, nlp]
 draft: false
-authorship: ai-coauthored
 ---
 
 Paper: [Attention Is All You Need](https://arxiv.org/pdf/1706.03762) (Vaswani et al., 2017)

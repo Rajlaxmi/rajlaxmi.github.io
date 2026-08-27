@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import SectionLink from '../components/SectionLink';
@@ -18,11 +18,27 @@ const WritingPage: React.FC = () => {
 
       <main>
         <div className="mx-auto max-w-page px-6 pb-16 pt-32 sm:px-10 sm:pt-40">
-          <p className="eyebrow">index</p>
-          <h1 className="mt-5 font-serif text-title text-ink">Writing</h1>
-          <p className="mt-6 max-w-[38rem] text-[0.807860rem] leading-[1.55] text-muted">
-            Reflections on algorithms, reasoning and multimodality.
-          </p>
+          <div className="flex flex-wrap items-start justify-between gap-6">
+            <div>
+              <p className="eyebrow">index</p>
+              <h1 className="mt-5 font-serif text-title text-ink">Writing</h1>
+              <p className="mt-6 max-w-[38rem] text-[0.807860rem] leading-[1.55] text-muted">
+                Reflections on algorithms, reasoning and multimodality.
+              </p>
+            </div>
+
+            <a
+              href="/notes"
+              className="group inline-flex shrink-0 items-center gap-3 text-muted transition-colors duration-300 hover:text-ink"
+            >
+              <span className="eyebrow">all notes</span>
+              <ArrowUpRight
+                size={14}
+                strokeWidth={1.5}
+                className="transition-transform duration-500 ease-editorial group-hover:translate-x-1 group-hover:-translate-y-1"
+              />
+            </a>
+          </div>
         </div>
 
         <div className="mx-auto max-w-page px-6 pb-24 sm:px-10">
@@ -34,16 +50,9 @@ const WritingPage: React.FC = () => {
                     <h3 className="text-[0.848251rem] text-ink transition-colors duration-300 group-hover:text-accent">
                       {post.title}
                     </h3>
-                    <div className="flex shrink-0 flex-col items-end gap-1">
-                      <p className="eyebrow">
-                        {post.category} · {formatDate(post.date)}
-                      </p>
-                      {post.authorship && (
-                        <span className="eyebrow inline-block text-[0.55rem] leading-none">
-                          {post.authorship === 'ai-coauthored' ? 'AI-Coauthored' : 'Self-Written'}
-                        </span>
-                      )}
-                    </div>
+                    <p className="eyebrow shrink-0">
+                      {post.category} · {formatDate(post.date)}
+                    </p>
                   </div>
 
                   <p className="mt-2 max-w-measure text-muted">{post.excerpt}</p>

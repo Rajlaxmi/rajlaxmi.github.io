@@ -48,12 +48,6 @@ const BlogPost: React.FC = () => {
               {post.category} · {formatDate(post.date)} · {post.readTime}
             </p>
 
-            {post.authorship && (
-              <p className="eyebrow mt-1 text-[0.55rem] leading-none">
-                {post.authorship === 'ai-coauthored' ? 'AI-Coauthored' : 'Self-Written'}
-              </p>
-            )}
-
             <h1 className="mt-5 font-serif text-title text-ink">{post.title}</h1>
 
             {post.excerpt && (

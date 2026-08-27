@@ -6,7 +6,6 @@ category: Notes
 excerpt: Maximum stimulus, minimum cost — designing a training protocol around a leg injury and low bone density.
 tags: [training, experiments]
 draft: true
-authorship: self-written
 ---
 
 ### Personal Context

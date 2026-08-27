@@ -6,7 +6,6 @@ category: Productivity
 readTime: 4 min read
 excerpt: Why having your own space to create, explore, and build is essential for innovation and personal growth—drawing inspiration from Silicon Valley garages.
 tags: [making, spaces]
-authorship: self-written
 ---
 
 A dedicated space for creation, exploration, and building can be transformative. In Silicon Valley, the garage has become a symbol of innovation and entrepreneurship.

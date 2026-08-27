@@ -6,7 +6,6 @@ category: Philosophy
 readTime: 5 min read
 excerpt: In philosphy or metaphysics, actuality or realisation as opposed to potentiality.
 tags: [aristotle, potential, metaphysics]
-authorship: self-written
 ---
 
 Aristotle used the word to refer to the soul (psyche), seen as that form within the material being by virtue of which it achieves the actuality of its nature. In certain vitalist philophies or theories, entelechy refers to the vital force within an organism that allows for life, development and self-fulfillment.
