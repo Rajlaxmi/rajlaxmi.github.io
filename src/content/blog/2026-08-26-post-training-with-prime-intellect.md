@@ -6,6 +6,7 @@ category: Machine Learning
 excerpt: What SFT, RLHF, DPO, and RLVR each actually do to a model — then a hands-on walkthrough building a dataset, a verifier, and an eval with Prime Intellect's Verifiers framework.
 tags: [post-training, rlhf, rlvr, prime-intellect, verifiers]
 draft: false
+authorship: ai-coauthored
 ---
 
 ### Overview

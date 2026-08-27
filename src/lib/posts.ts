@@ -13,6 +13,8 @@ export interface BlogPost {
   /** Raw markdown body, frontmatter stripped. */
   content: string;
   draft: boolean;
+  /** Authorship badge shown on the article page. Omitted entirely if unset. */
+  authorship?: 'ai-coauthored' | 'self-written';
 }
 
 /**
@@ -56,6 +58,9 @@ function toPost(path: string, source: string): BlogPost {
 
   const title = asString(data.title, filenameSlug ?? 'Untitled');
   const tags = Array.isArray(data.tags) ? data.tags : [];
+  const authorshipRaw = asString(data.authorship);
+  const authorship =
+    authorshipRaw === 'ai-coauthored' || authorshipRaw === 'self-written' ? authorshipRaw : undefined;
 
   return {
     slug: asString(data.slug) || toSlug(filenameSlug ?? title),
@@ -67,6 +72,7 @@ function toPost(path: string, source: string): BlogPost {
     readTime: asString(data.readTime) || estimateReadTime(content),
     content,
     draft: data.draft === true,
+    authorship,
   };
 }
 

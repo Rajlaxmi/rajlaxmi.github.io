@@ -19,9 +19,16 @@ const Blog: React.FC = () => (
               <h3 className="text-[0.888645rem] text-ink transition-colors duration-300 group-hover:text-accent">
                 {post.title}
               </h3>
-              <p className="eyebrow shrink-0">
-                {post.category} · {formatDate(post.date)}
-              </p>
+              <div className="flex shrink-0 flex-col items-end gap-1">
+                <p className="eyebrow">
+                  {post.category} · {formatDate(post.date)}
+                </p>
+                {post.authorship && (
+                  <span className="eyebrow inline-block text-[0.55rem] leading-none">
+                    {post.authorship === 'ai-coauthored' ? 'AI-Coauthored' : 'Self-Written'}
+                  </span>
+                )}
+              </div>
             </div>
 
             <p className="mt-1.5 max-w-measure text-[0.799780rem] text-muted">{post.excerpt}</p>

@@ -6,11 +6,14 @@ category: Reference
 excerpt: A quick lookup cheatsheet for ML coding.
 tags: [pytorch, numpy, python, reference, cheatsheet]
 draft: false
+authorship: ai-coauthored
 ---
 
 This is a lookup sheet of frequent Pytorch/Numpy/Python functionalities used in ML scripts.
 
 [Open the runnable version in Google Colab](https://colab.research.google.com/github/Rajlaxmi/rajlaxmi.github.io/blob/master/notebooks/pytorch-numpy-python-reference.ipynb) to try any of the snippets below live, no local setup required.
+
+Official references: [PyTorch Cheat Sheet](https://docs.pytorch.org/tutorials/beginner/ptcheat.html) · [PyTorch documentation](https://docs.pytorch.org/docs/stable/index.html) · [NumPy quickstart](https://numpy.org/doc/stable/user/quickstart.html)
 
 ### Creating Arrays / Tensors
 
