@@ -9,6 +9,8 @@ draft: false
 authorship: ai-coauthored
 ---
 
+**Contents:** [Arrays/Tensors](#creating-arrays-tensors) · [Indexing](#shape-indexing-and-slicing) · [Broadcasting](#broadcasting) · [Math](#math-and-reductions) · [Reshaping](#reshaping-and-combining) · [Linear Algebra](#linear-algebra) · [Random](#random-numbers) · [Dtypes/Devices](#dtypes-and-devices) · [NumPy Interop](#numpy-pytorch-interop) · [Autograd](#autograd-pytorch-only) · [nn.Module](#building-a-model-nn-module) · [Training Loop](#training-loop-skeleton) · [Python Idioms](#python-idioms-worth-knowing-cold)
+
 This is a lookup sheet of frequent Pytorch/Numpy/Python functionalities used in ML scripts.
 
 [Open the runnable version in Google Colab](https://colab.research.google.com/github/Rajlaxmi/rajlaxmi.github.io/blob/master/notebooks/pytorch-numpy-python-reference.ipynb) to try any of the snippets below live, no local setup required.
@@ -16,6 +18,8 @@ This is a lookup sheet of frequent Pytorch/Numpy/Python functionalities used in 
 Official references: [PyTorch Cheat Sheet](https://docs.pytorch.org/tutorials/beginner/ptcheat.html) · [PyTorch documentation](https://docs.pytorch.org/docs/stable/index.html) · [NumPy quickstart](https://numpy.org/doc/stable/user/quickstart.html)
 
 ### Creating Arrays / Tensors
+
+*PyTorch docs: [Creation Ops](https://docs.pytorch.org/docs/stable/torch.html)*
 
 | Operation | NumPy | PyTorch |
 | --- | --- | --- |
@@ -32,6 +36,8 @@ Note the shape argument convention differs: NumPy wants a single tuple (`np.zero
 
 ### Shape, Indexing, and Slicing
 
+*PyTorch docs: [Indexing, Slicing, Joining, Mutating Ops](https://docs.pytorch.org/docs/stable/torch.html)*
+
 | Operation | NumPy | PyTorch |
 | --- | --- | --- |
 | Shape | `a.shape` | `t.shape` (or `t.size()`) |
@@ -46,6 +52,8 @@ Note the shape argument convention differs: NumPy wants a single tuple (`np.zero
 
 ### Broadcasting
 
+*PyTorch docs: [Broadcasting semantics](https://docs.pytorch.org/docs/stable/notes/broadcasting.html)*
+
 Both follow the same rule, aligned from the trailing dimension: two axes are compatible if they're equal, or one of them is `1`. A `(3, 1)` array/tensor and a `(1, 4)` one combine into `(3, 4)` without either being copied until the operation actually runs.
 
 ```python
@@ -59,6 +67,8 @@ t1 + t2                           # shape (3, 4), identical rule
 ```
 
 ### Math and Reductions
+
+*PyTorch docs: [Math Operations](https://docs.pytorch.org/docs/stable/torch.html)*
 
 | Operation | NumPy | PyTorch |
 | --- | --- | --- |
@@ -80,6 +90,8 @@ t1 + t2                           # shape (3, 4), identical rule
 
 ### Reshaping and Combining
 
+*PyTorch docs: [Indexing, Slicing, Joining, Mutating Ops](https://docs.pytorch.org/docs/stable/torch.html)*
+
 | Operation | NumPy | PyTorch |
 | --- | --- | --- |
 | Reshape | `a.reshape(2, 6)` | `t.reshape(2, 6)` or `t.view(2, 6)` |
@@ -95,6 +107,8 @@ t1 + t2                           # shape (3, 4), identical rule
 
 ### Linear Algebra
 
+*PyTorch docs: [torch.linalg](https://docs.pytorch.org/docs/stable/linalg.html)*
+
 | Operation | NumPy | PyTorch |
 | --- | --- | --- |
 | Dot product | `np.dot(a, b)` | `torch.dot(t1, t2)` (1D only) |
@@ -106,6 +120,8 @@ t1 + t2                           # shape (3, 4), identical rule
 | Solve `Ax = b` | `np.linalg.solve(A, b)` | `torch.linalg.solve(A, b)` |
 
 ### Random Numbers
+
+*PyTorch docs: [Random Sampling](https://docs.pytorch.org/docs/stable/torch.html)*
 
 | Operation | NumPy | PyTorch |
 | --- | --- | --- |
@@ -120,6 +136,8 @@ Prefer `np.random.default_rng()` over the legacy `np.random.seed()` global-state
 
 ### Dtypes and Devices
 
+*PyTorch docs: [Tensor Attributes](https://docs.pytorch.org/docs/stable/tensor_attributes.html)*
+
 | Operation | NumPy | PyTorch |
 | --- | --- | --- |
 | Check dtype | `a.dtype` | `t.dtype` |
@@ -133,6 +151,8 @@ The default-dtype mismatch trips people up constantly: `np.array([1.0, 2.0])` is
 
 ### NumPy ⇄ PyTorch Interop
 
+*PyTorch tutorial: [Bridge to NumPy](https://docs.pytorch.org/tutorials/beginner/blitz/tensor_tutorial.html)*
+
 ```python
 # NumPy -> PyTorch (shares memory on CPU — mutating one mutates the other)
 t = torch.from_numpy(a)
@@ -145,6 +165,8 @@ a = t.detach().cpu().numpy()  # safe general-purpose version
 `t.detach().cpu().numpy()` is the version to reach for by default: `.detach()` drops it from the autograd graph (skip if the tensor doesn't require grad), `.cpu()` is a no-op if it's already on CPU and otherwise necessary since NumPy has no concept of a GPU tensor, and only then can `.numpy()` succeed.
 
 ### Autograd (PyTorch-only)
+
+*PyTorch docs: [Autograd mechanics](https://docs.pytorch.org/docs/stable/notes/autograd.html) · [A Gentle Introduction to torch.autograd](https://docs.pytorch.org/tutorials/beginner/blitz/autograd_tutorial.html)*
 
 ```python
 x = torch.tensor([2.0], requires_grad=True)
@@ -161,7 +183,9 @@ x.grad.zero_()      # gradients accumulate by default — zero before the next b
 
 Three things that catch people every time: gradients **accumulate** into `.grad` across multiple `backward()` calls unless you zero them; `backward()` only works on a scalar output (call `.sum()` or `.mean()` first, or pass a `gradient=` tensor matching the output's shape); and any in-place op on a tensor that's part of the graph you still need for backward raises a `RuntimeError` rather than silently corrupting gradients.
 
-### Building a Model: `nn.Module`
+### Building a Model: nn.Module
+
+*PyTorch docs: [torch.nn](https://docs.pytorch.org/docs/stable/nn.html) · [nn.Module](https://docs.pytorch.org/docs/stable/generated/torch.nn.Module.html)*
 
 ```python
 import torch.nn as nn
@@ -185,6 +209,8 @@ Every submodule assigned as an attribute (`self.net = ...`) is auto-registered �
 
 ### Training Loop Skeleton
 
+*PyTorch docs: [torch.optim](https://docs.pytorch.org/docs/stable/optim.html)*
+
 ```python
 optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
 loss_fn = nn.CrossEntropyLoss()
@@ -201,6 +227,8 @@ for x, y in dataloader:
 `optimizer.zero_grad()` before the forward pass (not just before `backward()`) is the convention to default to. At eval time, wrap the forward pass in `with torch.no_grad():` and call `model.eval()` first — the latter matters specifically for layers that behave differently in train vs. eval (`Dropout`, `BatchNorm`), and is easy to forget since nothing errors if you don't.
 
 ### Python Idioms Worth Knowing Cold
+
+*Style guides: [PEP 8](https://peps.python.org/pep-0008/) · [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)*
 
 Not PyTorch or NumPy specific, but the plain-Python patterns that show up in nearly every data/ML script:
 

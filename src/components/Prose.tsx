@@ -16,6 +16,14 @@ function isExternal(href = ''): boolean {
   return /^https?:\/\//i.test(href);
 }
 
+/** True for a paragraph that opens with a bold "Contents:" label — the post's table of contents. */
+function isTocParagraph(node?: { children: Array<{ type: string; tagName?: string; children?: Array<{ type: string; value?: string }> }> }): boolean {
+  const first = node?.children[0];
+  if (!first || first.type !== 'element' || first.tagName !== 'strong') return false;
+  const label = first.children?.[0];
+  return label?.type === 'text' && label.value === 'Contents:';
+}
+
 const components: Components = {
   h1: ({ children }) => (
     <h2 id={slugify(children)} className="scroll-mt-28">
@@ -70,6 +78,9 @@ const components: Components = {
     const onlyChild = node?.children.length === 1 ? node.children[0] : undefined;
     if (onlyChild && onlyChild.type === 'element' && onlyChild.tagName === 'img') {
       return <>{children}</>;
+    }
+    if (isTocParagraph(node)) {
+      return <p className="toc-line">{children}</p>;
     }
     return <p>{children}</p>;
   },

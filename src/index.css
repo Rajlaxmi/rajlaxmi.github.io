@@ -264,6 +264,19 @@
   @apply link-quiet;
 }
 
+/* Table-of-contents line: a paragraph opening with a bold "Contents:" label,
+   singled out by Prose.tsx so it can run smaller than body text. */
+.prose .toc-line {
+  @apply text-muted;
+  font-size: 0.7rem;
+  line-height: 1.7;
+}
+
+.prose .toc-line strong {
+  @apply text-muted;
+  font-weight: 600;
+}
+
 .prose code {
   @apply bg-surface font-mono;
   color: rgb(var(--prose-accent));
