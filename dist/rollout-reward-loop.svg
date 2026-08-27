@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 855.0 446" width="855.0" height="446">
+<rect x="0" y="0" width="855.0" height="446" fill="#ffffff"/>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#111111"/>
+  </marker>
+</defs>
+<rect x="40" y="50" width="150" height="56" rx="6" fill="#f5f5f5" stroke="#111111" stroke-width="1.3"/>
+<text x="115.0" y="74.0" text-anchor="middle" font-family="Inter, -apple-system, sans-serif" font-size="12.5" fill="#111111"><tspan x="115.0" dy="0">Dataset Row</tspan><tspan x="115.0" dy="16">(prompt, answer)</tspan></text>
+<rect x="230" y="50" width="150" height="56" rx="6" fill="#ffffff" stroke="#111111" stroke-width="1.3"/>
+<text x="305.0" y="82.0" text-anchor="middle" font-family="Inter, -apple-system, sans-serif" font-size="12.5" fill="#111111"><tspan x="305.0" dy="0">Policy Model</tspan></text>
+<line x1="190.0" y1="78.0" x2="230" y2="78.0" stroke="#111111" stroke-width="1.3" marker-end="url(#arrow)"/>
+<rect x="420" y="50" width="150" height="56" rx="6" fill="#ffffff" stroke="#111111" stroke-width="1.3"/>
+<text x="495.0" y="82.0" text-anchor="middle" font-family="Inter, -apple-system, sans-serif" font-size="12.5" fill="#111111"><tspan x="495.0" dy="0">Completion</tspan></text>
+<line x1="380.0" y1="78.0" x2="420" y2="78.0" stroke="#111111" stroke-width="1.3" marker-end="url(#arrow)"/>
+<rect x="610" y="50" width="150" height="56" rx="6" fill="#f5f5f5" stroke="#111111" stroke-width="1.3"/>
+<text x="685.0" y="74.0" text-anchor="middle" font-family="Inter, -apple-system, sans-serif" font-size="12.5" fill="#111111"><tspan x="685.0" dy="0">Reward Function</tspan><tspan x="685.0" dy="16">(the verifier)</tspan></text>
+<line x1="570.0" y1="78.0" x2="610" y2="78.0" stroke="#111111" stroke-width="1.3" marker-end="url(#arrow)"/>
+<line x1="685.0" y1="106" x2="685.0" y2="152" stroke="#111111" stroke-width="1.3" marker-end="url(#arrow)"/>
+<text x="699.0" y="133.0" text-anchor="start" font-family="Inter, -apple-system, sans-serif" font-size="11" fill="#555555" font-weight="normal">reward, one per rollout</text>
+<rect x="580.0" y="176" width="210" height="20" rx="6" fill="#ffffff" stroke="#111111" stroke-width="1.3"/>
+<text x="685.0" y="190.0" text-anchor="middle" font-family="Inter, -apple-system, sans-serif" font-size="10.5" fill="#111111"><tspan x="685.0" dy="0">rollout 1  →  reward r1</tspan></text>
+<rect x="580.0" y="200" width="210" height="20" rx="6" fill="#f5f5f5" stroke="#111111" stroke-width="1.3"/>
+<text x="685.0" y="214.0" text-anchor="middle" font-family="Inter, -apple-system, sans-serif" font-size="10.5" fill="#111111"><tspan x="685.0" dy="0">rollout 2  →  reward r2</tspan></text>
+<rect x="580.0" y="224" width="210" height="20" rx="6" fill="#ffffff" stroke="#111111" stroke-width="1.3"/>
+<text x="685.0" y="238.0" text-anchor="middle" font-family="Inter, -apple-system, sans-serif" font-size="10.5" fill="#111111"><tspan x="685.0" dy="0">rollout 3  →  reward r3</tspan></text>
+<text x="685.0" y="168" text-anchor="middle" font-family="Inter, -apple-system, sans-serif" font-size="11" fill="#999999" font-weight="normal">N rollouts, same prompt</text>
+<line x1="685.0" y1="248" x2="685.0" y2="272" stroke="#111111" stroke-width="1.3" marker-end="url(#arrow)"/>
+<rect x="555.0" y="294" width="260" height="46" rx="6" fill="#ffffff" stroke="#111111" stroke-width="1.3"/>
+<text x="685.0" y="313.0" text-anchor="middle" font-family="Inter, -apple-system, sans-serif" font-size="11.5" fill="#111111"><tspan x="685.0" dy="0">Group-relative advantage</tspan><tspan x="685.0" dy="16">(normalize r1..rN within the group)</tspan></text>
+<line x1="685.0" y1="340" x2="685.0" y2="364" stroke="#111111" stroke-width="1.3" marker-end="url(#arrow)"/>
+<rect x="595.0" y="386" width="180" height="40" rx="6" fill="#ffffff" stroke="#111111" stroke-width="1.3"/>
+<text x="685.0" y="410.0" text-anchor="middle" font-family="Inter, -apple-system, sans-serif" font-size="12.5" fill="#111111"><tspan x="685.0" dy="0">Policy update</tspan></text>
+</svg>
