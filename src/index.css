@@ -5,14 +5,16 @@
 /* ---------------------------------------------------------------------------
    Design tokens
 
-   Monochrome, editorial. White paper, near-black ink, grayscale everywhere —
-   no accent color. Light-only by design (no dark mode). Values are raw RGB
-   channels so Tailwind's `<alpha-value>` syntax works (see tailwind.config.js).
+   Monochrome, editorial. Warm off-white paper, near-black ink, grayscale
+   everywhere — no accent color. Light-only by design (no dark mode). Values are
+   raw RGB channels so Tailwind's `<alpha-value>` syntax works (see
+   tailwind.config.js).
    --------------------------------------------------------------------------- */
 @layer base {
   :root {
-    --paper: 255 255 255;
-    --surface: 245 245 245;
+    /* Paper carries a warm undertone rather than a pure white. */
+    --paper: 250 246 238;
+    --surface: 242 237 227;
     --ink: 17 17 17;
     --muted: 85 85 85;
     --faint: 153 153 153;
