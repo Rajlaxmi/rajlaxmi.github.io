@@ -12,9 +12,9 @@
    --------------------------------------------------------------------------- */
 @layer base {
   :root {
-    /* Paper carries a warm undertone rather than a pure white. */
-    --paper: 250 246 238;
-    --surface: 242 237 227;
+    /* Paper is a faint warm ivory (#faf9f5), matching anthropic.com. */
+    --paper: 250 249 245;
+    --surface: 240 239 233;
     --ink: 17 17 17;
     --muted: 85 85 85;
     --faint: 153 153 153;
