@@ -12,9 +12,10 @@
    --------------------------------------------------------------------------- */
 @layer base {
   :root {
-    /* Paper is a faint warm ivory (#faf9f5), matching anthropic.com. */
+    /* Paper is a faint warm ivory (#faf9f5), matching anthropic.com;
+       surface is one soft step down in the same hue (#f5f4ee). */
     --paper: 250 249 245;
-    --surface: 240 239 233;
+    --surface: 245 244 238;
     --ink: 17 17 17;
     --muted: 85 85 85;
     --faint: 153 153 153;
