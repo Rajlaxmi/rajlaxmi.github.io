@@ -65,6 +65,18 @@
     @apply text-label uppercase text-faint;
   }
 
+  /* Inline tag list with middot separators, matching the "·" meta line —
+     and not reliant on flexbox `gap`, which older Safari ignores. */
+  .tag-list {
+    @apply list-none p-0;
+  }
+
+  .tag-list li:not(:last-child)::after {
+    content: '·';
+    margin: 0 0.5em;
+    color: rgb(var(--faint));
+  }
+
   /* Text link: the underline grows in from the left on hover. */
   .link {
     @apply relative text-ink transition-colors duration-300;

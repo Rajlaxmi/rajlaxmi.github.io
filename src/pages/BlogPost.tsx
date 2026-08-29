@@ -55,9 +55,9 @@ const BlogPost: React.FC = () => {
             )}
 
             {post.tags.length > 0 && (
-              <ul className="mt-7 flex flex-wrap gap-x-4 gap-y-2">
+              <ul className="tag-list mt-7 leading-loose">
                 {post.tags.map((tag) => (
-                  <li key={tag} className="eyebrow text-muted">
+                  <li key={tag} className="eyebrow inline text-muted">
                     {tag}
                   </li>
                 ))}
