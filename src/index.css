@@ -315,15 +315,19 @@
 }
 
 .prose pre {
-  @apply overflow-x-auto border border-rule bg-surface;
+  @apply border border-rule bg-surface;
   padding: 1.1rem 1.25rem;
   border-radius: 4px;
   line-height: 1.6;
+  /* Wrap long lines instead of scrolling horizontally. */
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
 }
 
 .prose pre code {
   @apply bg-transparent p-0 text-ink;
   font-size: 0.879240rem;
+  white-space: inherit;
 }
 
 .prose img {
