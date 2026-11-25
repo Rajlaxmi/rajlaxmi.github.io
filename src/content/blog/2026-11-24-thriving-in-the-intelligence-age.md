@@ -35,7 +35,7 @@ Artificial intelligence is extraordinary at optimization: give it a clear goal, 
 
 When anyone can generate a thousand designs, strategies, or essays in seconds, the world doesn't suffer from a shortage of content—it drowns in average output. The bottleneck moves from **production to curation**.
 
-![Choosing the one thing worth keeping from an endless pile](/intelligence-age-curation.jpg)
+![Lifting the one thing worth keeping from an endless sea of pages](/intelligence-age-curation.jpg)
 
 - **Build deep taste:** Expose yourself to the best of human history—great literature, art, architecture, science, and craft. Understand *why* something works, not just *that* it works.
 - **Guard your cognitive muscles:** It is tempting to outsource all thinking to machines. Resist that. If you never struggle through a hard problem, write a difficult paragraph from scratch, or sit with ambiguity, your judgment will atrophy. **Use AI to expand your reach, not to replace the friction that builds wisdom.**
